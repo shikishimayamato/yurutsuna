@@ -1,11 +1,67 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#167e78"><title>ゆるつな香川｜自己登録・承認版 v2.2</title>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#526b41"><title>ゆるつな香川｜オリーブの輪デザイン v2.3</title>
 <style>
 :root{font-family:system-ui,-apple-system,'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif;background:#f2f7f5;color:#18352e;font-size:15px}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.55}a{color:#176f66}.app{max-width:1000px;margin:auto;padding:0 16px 96px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:19px 0 16px}.brand{display:flex;align-items:center;gap:11px}.logo{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:#168a7c;color:white;font-size:23px}h1{font-size:20px;margin:0}h2{font-size:18px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}p{line-height:1.65}.muted{color:#617c72;font-size:13px}.badge{display:inline-block;border-radius:99px;padding:5px 9px;background:#e4f2ec;color:#176c61;font-size:12px;font-weight:700}.btn{border:0;border-radius:11px;background:#148777;color:white;font-weight:700;padding:11px 15px}.btn.light{background:#e5f1ed;color:#176f66}.btn.outline{border:1px solid #bdd9ce;background:white;color:#176f66}.btn.danger{background:#fce8e6;color:#ad3530}.btn.small{padding:7px 10px;font-size:13px}.panel{background:#fff;border:1px solid #dfebe6;border-radius:17px;padding:19px;margin:0 0 17px;box-shadow:0 3px 15px #15433508}.intro{background:linear-gradient(125deg,#126f6a,#43aa8c);color:white;border-radius:19px;padding:24px;margin-bottom:18px}.intro h2{font-size:24px}.intro p{margin:7px 0 0;color:#eafbf4}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.stack{display:grid;gap:13px}.grid{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.field{display:grid;gap:6px}label{font-size:13px;font-weight:700}.field input,.field textarea,.field select,.filter{border:1px solid #bbd2c8;border-radius:10px;padding:11px;width:100%;background:white;color:#173a31}.field textarea{min-height:85px;resize:vertical}small{color:#62776f}.notice{border:1px solid #dfd3ad;background:#fffae9;border-radius:10px;padding:11px;font-size:13px}.err{color:#b52e2e;font-size:13px;white-space:pre-wrap}.empty{padding:30px;text-align:center;color:#637a72;border:1px dashed #b9d4cb;border-radius:13px}.nav{display:flex;gap:7px;flex-wrap:wrap;padding-bottom:17px}.nav button{border:1px solid #d1e5db;border-radius:11px;background:white;color:#28665b;font-weight:700;padding:9px 14px}.nav button.active{background:#187e74;border-color:#187e74;color:white}.event{padding:17px}.event h3{margin:5px 0 9px}.details{color:#566e65;font-size:13px;line-height:1.7}.event p{white-space:pre-wrap;margin:9px 0}.counts{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0}.counts span{background:#eff7f1;border-radius:9px;padding:6px 9px;font-size:12px}.answers{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 5px}.answers button{border:1px solid #c6ddd2;background:white;color:#1d5f53;border-radius:10px;padding:8px 12px}.answers button.selected{background:#147e72;color:white;border-color:#147e72}.names{font-size:12px;color:#648078}.calendarHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.week>div{text-align:center;font-size:12px;color:#71857e;padding:8px 0}.day{border:1px solid #e3ede8;background:white;min-height:66px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:7px 1px;cursor:pointer}.day.muted{opacity:.34}.dot{border-radius:99px;width:6px;height:6px;background:#139b82}.count{font-size:10px;color:#188378}.hide{display:none!important}.overlay{position:fixed;inset:0;background:#172a2485;display:grid;place-items:center;padding:15px;z-index:20}.dialog{background:white;border-radius:17px;width:min(560px,100%);max-height:92vh;overflow:auto;padding:18px}.dialog-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}.dialog-header h2{margin:0}.footer{font-size:12px;text-align:center;color:#668076;padding:16px}.pill{border-radius:99px;padding:7px 11px;background:#e6f2ed;font-size:12px;color:#22695f}.loading{background:#fff;border-radius:10px;padding:14px;margin:0 0 16px}@media(max-width:600px){.app{padding-inline:11px}.intro{padding:18px}.panel{padding:15px}.day{min-height:54px}.event{padding:14px}}
 .member-row{display:grid;gap:9px;padding:14px;border:1px solid #e1e9e5;border-radius:13px;background:#fcfffd}.member-row .name{font-size:16px;font-weight:700}.member-meta{font-size:12px;color:#5c746a}.flag{display:inline-block;padding:4px 8px;border-radius:8px;background:#e5f0ec;font-size:12px}.flag.suspended{color:#8d6000;background:#fff0d1}.flag.removed{color:#a33636;background:#ffe8e8}.flag.admin{color:#175d84;background:#e7f2fd}.audit-row{padding:10px;border-bottom:1px solid #e8efeb;font-size:13px;line-height:1.6}.audit-row:last-child{border-bottom:0}.audit-reason{white-space:pre-wrap;color:#5a6e66}.toast{position:fixed;right:16px;bottom:16px;background:#183c34;color:white;padding:12px 15px;border-radius:10px;z-index:40;max-width:400px;box-shadow:0 4px 18px #0003}.member-actions{display:flex;gap:6px;flex-wrap:wrap}.pendingHelp{background:#f2faf6;border:1px solid #b5d9c7;padding:12px;border-radius:12px}.subtleLink{border:0;background:none;color:#136e62;text-decoration:underline;padding:7px;cursor:pointer}.member-note{font-size:13px;white-space:pre-wrap;color:#526e64;line-height:1.6}.emailText{font-size:12px;color:#667c72;word-break:break-all}
-</style></head><body>
+
+/* v2.3 PWA専用の追加スタイル（従来画面・フォームは維持） */
+.logo{overflow:hidden;background:#168a7c}.logo img{width:100%;height:100%;display:block;object-fit:cover}
+.app{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px));padding-top:env(safe-area-inset-top,0px)}
+.install-tip{margin:-2px 0 15px;padding:10px 13px;border-radius:12px;background:#eaf5f0;border:1px solid #c7e2d5;color:#245d51;font-size:13px}
+.install-tip summary{font-weight:700;cursor:pointer;line-height:1.65;list-style-position:inside}
+.install-tip p{margin:8px 0 4px;font-size:13px}
+.install-tip .steps{margin:7px 0 10px;padding-left:22px;line-height:1.8}
+.install-tip .install-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:7px}
+.update-banner{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:#fff5d9;color:#5c4b25;margin-bottom:13px;border:1px solid #ecd89f}
+@media(max-width:600px){.install-tip{margin-bottom:12px}.update-banner{flex-wrap:wrap}}
+
+/* オリーブの輪：提供画像をそのまま意匠として使用した配色 */
+:root{background:#f7f9f3;color:#2c3b29}
+body{background:#f7f9f3}
+.top{padding-top:18px}
+.top .brand{gap:12px}
+.logo{width:60px;height:60px;flex-shrink:0;border-radius:17px;background:#fff;border:1px solid #dbe5d5;box-shadow:0 2px 11px #455b2b13;overflow:hidden}
+.logo img{object-fit:contain;width:100%;height:100%}
+.top .brand h1{color:#45552b;letter-spacing:.01em;font-weight:800}
+a,.subtleLink{color:#506e3a}
+.panel{border-color:#dfe8d8;box-shadow:0 3px 15px #4a603b0a}
+.intro{background:linear-gradient(120deg,#526b41,#7e9b60);position:relative;overflow:hidden;isolation:isolate}
+.intro::after{content:"";position:absolute;right:-42px;top:-68px;width:260px;height:260px;background:url('./icon-512.png') center/contain no-repeat;opacity:.12;pointer-events:none;z-index:-1;border-radius:50%}
+.intro p{color:#f4f8ef}
+.btn{background:#4d7143}
+.btn.light{background:#eaf0e2;color:#3c6033}
+.btn.outline{background:#fff;border-color:#cbdcc1;color:#4b6738}
+.btn.danger{background:#fce9e6;color:#ae3930}
+.nav button{border-color:#d4e2ca;color:#4b6636}
+.nav button.active,.answers button.selected{background:#4d7143;color:#fff;border-color:#4d7143}
+.answers button{color:#4a6738;border-color:#c6d6bb}
+.badge,.pill,.flag{background:#edf2e5;color:#4e6940}
+.flag.admin{color:#536730;background:#edf2e2}
+.counts span{background:#f2f5ea}
+.dot{background:#b28a0c}
+.count{color:#58753a}
+.install-tip,.pendingHelp{background:#f0f5eb;border-color:#cbdcbe;color:#46603a}
+.member-row{border-color:#e1e9d8;background:#fcfdf9}
+.loading{color:#42583e}
+@media(max-width:600px){.logo{width:52px;height:52px;border-radius:14px}.top .brand{gap:10px}.top .brand h1{font-size:19px}.intro::after{right:-90px;top:-35px;width:220px;height:220px}}
+</style><link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png?v=olive2">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=olive2">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="ゆるつな香川">
+<meta name="mobile-web-app-capable" content="yes">
+</head><body>
 <div class="app">
-<header class="top"><div class="brand"><div class="logo">🌿</div><div><h1>ゆるつな香川</h1><div class="muted">香川県ゆるつな倶楽部・会員共有版 v2.2</div></div></div><div id="account" class="row"></div></header>
+<header class="top"><div class="brand"><div class="logo"><img src="./icon-192.png?v=olive2" alt="オリーブの輪・ゆるつな香川のロゴ" width="45" height="45"></div><div><h1>ゆるつな香川</h1><div class="muted">香川県ゆるつな倶楽部・会員共有版 v2.3（オリーブ）</div></div></div><div id="account" class="row"></div></header>
+
+<div id="updateBanner" class="update-banner hide" role="status"><span>新しいバージョンがあります。入力内容を保存してから更新してください。</span><button type="button" class="btn small" id="applyPwaUpdate">更新する</button></div>
+<details id="pwaInstallHelp" class="install-tip"><summary>📱 スマホのホーム画面にアプリを追加する方法</summary>
+<p><strong>iPhone：</strong>Safariでこのページを開く → 共有（□↑）→ 「ホーム画面に追加」→「追加」。</p>
+<p><strong>Android：</strong>Chromeでこのページを開く → 右上の「︙」→ 「アプリをインストール」または「ホーム画面に追加」。</p>
+<p>インストール後も現在のアカウントでログインして使います。インターネット接続が必要です。</p>
+<div class="install-actions"><button type="button" class="btn small hide" id="installPwaBtn">この端末にインストール</button><span class="muted">App Store・Google Playは不要です。</span></div>
+</details>
 <div id="status" class="loading">アプリを準備しています…</div>
 <div id="setup" class="panel hide"><h2>初期設定が必要です</h2><p>Firebaseへの接続情報がまだ登録されていません。管理者が <code>index.html</code> 内の <code>firebaseConfig</code> を設定してからGitHub Pagesにアップロードしてください。</p><p class="muted">設定方法は同梱の「はじめにお読みください.txt」を参照してください。</p></div>
 <div id="login" class="panel hide"><h2>会員ログイン</h2><p class="muted">登録済みのメールアドレスとパスワードでログインしてください。</p><form id="loginForm" class="stack"><div class="field"><label for="email">メールアドレス</label><input id="email" type="email" autocomplete="username" required></div><div class="field"><label for="password">パスワード</label><input id="password" type="password" autocomplete="current-password" required></div><button class="btn" type="submit">ログインする</button><div id="loginErr" class="err" role="alert"></div></form><div class="row" style="margin-top:14px"><button type="button" id="showSignup" class="btn outline">初めての方：入会申請</button><button type="button" id="resetPassword" class="subtleLink">パスワードを忘れた方</button></div></div>
@@ -442,4 +498,73 @@ function attachClick(event) {
 }
 document.addEventListener('click',attachClick);
 
+</script>
+<script>
+// v2.3: PWAのインストールと更新制御。Firebaseの個人データはキャッシュしません。
+(function () {
+  'use strict';
+  const standAlone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  const help = document.getElementById('pwaInstallHelp');
+  if (standAlone && help) help.classList.add('hide');
+
+  let deferredInstallPrompt = null;
+  const installButton = document.getElementById('installPwaBtn');
+  window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    if (!standAlone) installButton.classList.remove('hide');
+  });
+  installButton.addEventListener('click', async () => {
+    if (!deferredInstallPrompt) return;
+    installButton.disabled = true;
+    try {
+      await deferredInstallPrompt.prompt();
+      await deferredInstallPrompt.userChoice;
+    } catch (error) {
+      console.warn('インストールの案内を表示できませんでした', error);
+    } finally {
+      deferredInstallPrompt = null;
+      installButton.classList.add('hide');
+      installButton.disabled = false;
+    }
+  });
+  window.addEventListener('appinstalled', () => {
+    installButton.classList.add('hide');
+    if (help) help.classList.add('hide');
+  });
+
+  if (!('serviceWorker' in navigator) || location.protocol !== 'https:') return;
+  let waitingWorker = null;
+  const banner = document.getElementById('updateBanner');
+  const updateButton = document.getElementById('applyPwaUpdate');
+  let updatingByUser = false;
+  updateButton.addEventListener('click', () => {
+    if (!waitingWorker) return;
+    updatingByUser = true;
+    updateButton.disabled = true;
+    waitingWorker.postMessage({type:'SKIP_WAITING'});
+  });
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (updatingByUser) window.location.reload();
+  });
+  const announceWaiting = worker => {
+    if (!worker || !navigator.serviceWorker.controller) return;
+    waitingWorker = worker;
+    banner.classList.remove('hide');
+  };
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js', {scope:'./'}).then(reg => {
+      if (reg.waiting) announceWaiting(reg.waiting);
+      reg.addEventListener('updatefound', () => {
+        const worker = reg.installing;
+        if (!worker) return;
+        worker.addEventListener('statechange', () => {
+          if (worker.state === 'installed') announceWaiting(worker);
+        });
+      });
+      // ブラウザーが再訪時にも更新を確認できるようにする。
+      reg.update().catch(() => {});
+    }).catch(error => console.warn('PWA登録に失敗しました', error));
+  });
+})();
 </script></body></html>
