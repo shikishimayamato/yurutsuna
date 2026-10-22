@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#167e78"><title>ゆるつな香川｜会員管理版 v2.1</title>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#167e78"><title>ゆるつな香川｜自己登録・承認版 v2.2</title>
 <style>
 :root{font-family:system-ui,-apple-system,'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif;background:#f2f7f5;color:#18352e;font-size:15px}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.55}a{color:#176f66}.app{max-width:1000px;margin:auto;padding:0 16px 96px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:19px 0 16px}.brand{display:flex;align-items:center;gap:11px}.logo{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:#168a7c;color:white;font-size:23px}h1{font-size:20px;margin:0}h2{font-size:18px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}p{line-height:1.65}.muted{color:#617c72;font-size:13px}.badge{display:inline-block;border-radius:99px;padding:5px 9px;background:#e4f2ec;color:#176c61;font-size:12px;font-weight:700}.btn{border:0;border-radius:11px;background:#148777;color:white;font-weight:700;padding:11px 15px}.btn.light{background:#e5f1ed;color:#176f66}.btn.outline{border:1px solid #bdd9ce;background:white;color:#176f66}.btn.danger{background:#fce8e6;color:#ad3530}.btn.small{padding:7px 10px;font-size:13px}.panel{background:#fff;border:1px solid #dfebe6;border-radius:17px;padding:19px;margin:0 0 17px;box-shadow:0 3px 15px #15433508}.intro{background:linear-gradient(125deg,#126f6a,#43aa8c);color:white;border-radius:19px;padding:24px;margin-bottom:18px}.intro h2{font-size:24px}.intro p{margin:7px 0 0;color:#eafbf4}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.stack{display:grid;gap:13px}.grid{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.field{display:grid;gap:6px}label{font-size:13px;font-weight:700}.field input,.field textarea,.field select,.filter{border:1px solid #bbd2c8;border-radius:10px;padding:11px;width:100%;background:white;color:#173a31}.field textarea{min-height:85px;resize:vertical}small{color:#62776f}.notice{border:1px solid #dfd3ad;background:#fffae9;border-radius:10px;padding:11px;font-size:13px}.err{color:#b52e2e;font-size:13px;white-space:pre-wrap}.empty{padding:30px;text-align:center;color:#637a72;border:1px dashed #b9d4cb;border-radius:13px}.nav{display:flex;gap:7px;flex-wrap:wrap;padding-bottom:17px}.nav button{border:1px solid #d1e5db;border-radius:11px;background:white;color:#28665b;font-weight:700;padding:9px 14px}.nav button.active{background:#187e74;border-color:#187e74;color:white}.event{padding:17px}.event h3{margin:5px 0 9px}.details{color:#566e65;font-size:13px;line-height:1.7}.event p{white-space:pre-wrap;margin:9px 0}.counts{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0}.counts span{background:#eff7f1;border-radius:9px;padding:6px 9px;font-size:12px}.answers{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 5px}.answers button{border:1px solid #c6ddd2;background:white;color:#1d5f53;border-radius:10px;padding:8px 12px}.answers button.selected{background:#147e72;color:white;border-color:#147e72}.names{font-size:12px;color:#648078}.calendarHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.week>div{text-align:center;font-size:12px;color:#71857e;padding:8px 0}.day{border:1px solid #e3ede8;background:white;min-height:66px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:7px 1px;cursor:pointer}.day.muted{opacity:.34}.dot{border-radius:99px;width:6px;height:6px;background:#139b82}.count{font-size:10px;color:#188378}.hide{display:none!important}.overlay{position:fixed;inset:0;background:#172a2485;display:grid;place-items:center;padding:15px;z-index:20}.dialog{background:white;border-radius:17px;width:min(560px,100%);max-height:92vh;overflow:auto;padding:18px}.dialog-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}.dialog-header h2{margin:0}.footer{font-size:12px;text-align:center;color:#668076;padding:16px}.pill{border-radius:99px;padding:7px 11px;background:#e6f2ed;font-size:12px;color:#22695f}.loading{background:#fff;border-radius:10px;padding:14px;margin:0 0 16px}@media(max-width:600px){.app{padding-inline:11px}.intro{padding:18px}.panel{padding:15px}.day{min-height:54px}.event{padding:14px}}
-.member-row{display:grid;gap:9px;padding:14px;border:1px solid #e1e9e5;border-radius:13px;background:#fcfffd}.member-row .name{font-size:16px;font-weight:700}.member-meta{font-size:12px;color:#5c746a}.flag{display:inline-block;padding:4px 8px;border-radius:8px;background:#e5f0ec;font-size:12px}.flag.suspended{color:#8d6000;background:#fff0d1}.flag.removed{color:#a33636;background:#ffe8e8}.flag.admin{color:#175d84;background:#e7f2fd}.audit-row{padding:10px;border-bottom:1px solid #e8efeb;font-size:13px;line-height:1.6}.audit-row:last-child{border-bottom:0}.audit-reason{white-space:pre-wrap;color:#5a6e66}.toast{position:fixed;right:16px;bottom:16px;background:#183c34;color:white;padding:12px 15px;border-radius:10px;z-index:40;max-width:400px;box-shadow:0 4px 18px #0003}.member-actions{display:flex;gap:6px;flex-wrap:wrap}
+.member-row{display:grid;gap:9px;padding:14px;border:1px solid #e1e9e5;border-radius:13px;background:#fcfffd}.member-row .name{font-size:16px;font-weight:700}.member-meta{font-size:12px;color:#5c746a}.flag{display:inline-block;padding:4px 8px;border-radius:8px;background:#e5f0ec;font-size:12px}.flag.suspended{color:#8d6000;background:#fff0d1}.flag.removed{color:#a33636;background:#ffe8e8}.flag.admin{color:#175d84;background:#e7f2fd}.audit-row{padding:10px;border-bottom:1px solid #e8efeb;font-size:13px;line-height:1.6}.audit-row:last-child{border-bottom:0}.audit-reason{white-space:pre-wrap;color:#5a6e66}.toast{position:fixed;right:16px;bottom:16px;background:#183c34;color:white;padding:12px 15px;border-radius:10px;z-index:40;max-width:400px;box-shadow:0 4px 18px #0003}.member-actions{display:flex;gap:6px;flex-wrap:wrap}.pendingHelp{background:#f2faf6;border:1px solid #b5d9c7;padding:12px;border-radius:12px}.subtleLink{border:0;background:none;color:#136e62;text-decoration:underline;padding:7px;cursor:pointer}.member-note{font-size:13px;white-space:pre-wrap;color:#526e64;line-height:1.6}.emailText{font-size:12px;color:#667c72;word-break:break-all}
 </style></head><body>
 <div class="app">
-<header class="top"><div class="brand"><div class="logo">🌿</div><div><h1>ゆるつな香川</h1><div class="muted">香川県ゆるつな倶楽部・会員共有版 v2.1</div></div></div><div id="account" class="row"></div></header>
+<header class="top"><div class="brand"><div class="logo">🌿</div><div><h1>ゆるつな香川</h1><div class="muted">香川県ゆるつな倶楽部・会員共有版 v2.2</div></div></div><div id="account" class="row"></div></header>
 <div id="status" class="loading">アプリを準備しています…</div>
 <div id="setup" class="panel hide"><h2>初期設定が必要です</h2><p>Firebaseへの接続情報がまだ登録されていません。管理者が <code>index.html</code> 内の <code>firebaseConfig</code> を設定してからGitHub Pagesにアップロードしてください。</p><p class="muted">設定方法は同梱の「はじめにお読みください.txt」を参照してください。</p></div>
-<div id="login" class="panel hide"><h2>会員ログイン</h2><p class="muted">運営が発行したメールアドレスとパスワードでログインしてください。LINEログインは今後の開発で追加予定です。</p><form id="loginForm" class="stack"><div class="field"><label for="email">メールアドレス</label><input id="email" type="email" autocomplete="username" required></div><div class="field"><label for="password">パスワード</label><input id="password" type="password" autocomplete="current-password" required></div><button class="btn" type="submit">ログインする</button><div id="loginErr" class="err"></div></form></div>
+<div id="login" class="panel hide"><h2>会員ログイン</h2><p class="muted">登録済みのメールアドレスとパスワードでログインしてください。</p><form id="loginForm" class="stack"><div class="field"><label for="email">メールアドレス</label><input id="email" type="email" autocomplete="username" required></div><div class="field"><label for="password">パスワード</label><input id="password" type="password" autocomplete="current-password" required></div><button class="btn" type="submit">ログインする</button><div id="loginErr" class="err" role="alert"></div></form><div class="row" style="margin-top:14px"><button type="button" id="showSignup" class="btn outline">初めての方：入会申請</button><button type="button" id="resetPassword" class="subtleLink">パスワードを忘れた方</button></div></div>
+<div id="signup" class="panel hide"><h2>新規入会申請</h2><p class="muted">香川県ゆるつな倶楽部のLINEグループ参加者向けです。申請後、管理者がLINE上の所属を確認し、承認すると利用を開始できます。</p><form id="signupForm" class="stack"><div class="field"><label for="signupName">LINEグループで使用している表示名 *</label><input id="signupName" minlength="1" maxlength="40" autocomplete="nickname" required placeholder="例：うっちー"></div><div class="field"><label for="signupEmail">メールアドレス *</label><input id="signupEmail" type="email" autocomplete="email" required></div><div class="field"><label for="signupPassword">パスワード（6文字以上）*</label><input id="signupPassword" type="password" minlength="6" autocomplete="new-password" required></div><div class="field"><label for="signupPasswordConfirm">パスワード（確認）*</label><input id="signupPasswordConfirm" type="password" minlength="6" autocomplete="new-password" required></div><div class="field"><label for="signupNote">運営者へのメッセージ（任意・200文字以内）</label><textarea id="signupNote" maxlength="200" placeholder="LINE上で運営者がご本人を確認できる情報など"></textarea></div><p class="notice">本アプリはLINEグループとは自動連携していません。管理者がLINEグループの参加状況を確認してから承認します。パスワードは運営者に伝えないでください。</p><button class="btn" id="submitSignup" type="submit">登録して入会を申請する</button><div id="signupErr" class="err" role="alert"></div></form><button id="backToLogin" class="subtleLink">ログイン画面へ戻る</button></div>
+<div id="pending" class="panel hide"><h2>入会申請を受け付けました</h2><p>管理者による確認・承認をお待ちください。</p><p id="pendingInfo" class="pendingHelp"></p><p class="muted">LINEグループへの参加状況を管理者が確認します。承認後、この画面を再読み込みするとイベントが利用できます。自動通知メールは現段階では送信されません。</p><button class="btn light" id="logoutPending">ログアウト</button></div>
 <div id="accessBlocked" class="panel hide"><h2 id="blockedTitle">利用を確認できません</h2><p id="blockedDescription"></p><p class="muted">お心当たりがない場合は、運営者に直接お問い合わせください。</p><button class="btn light" id="logoutBlocked">ログアウト</button></div>
-<div id="notMember" class="panel hide"><h2>会員承認待ちです</h2><p>ログインには成功しましたが、このアカウントはまだ会員リストに登録されていません。</p><p class="muted">Firebase管理画面の Authentication → ユーザー でUIDを確認し、Cloud Firestore の members コレクションに同じUIDの文書を登録してください。</p><button class="btn light" id="logoutWaiting">ログアウト</button></div>
+<div id="notMember" class="panel hide"><h2>入会申請が未登録です</h2><p>ログインはできていますが、会員名簿に申請情報がありません。申請途中に通信が切れた場合などは、この画面から登録できます。</p><form id="applyForm" class="stack"><div class="field"><label for="applyName">LINEグループの表示名</label><input id="applyName" minlength="1" maxlength="40" required></div><div class="field"><label for="applyNote">運営者へのメッセージ（任意）</label><textarea id="applyNote" maxlength="200"></textarea></div><button class="btn" id="applySubmit" type="submit">入会申請を登録する</button><p id="applyErr" class="err" role="alert"></p></form><button class="btn light" id="logoutWaiting" style="margin-top:12px">ログアウト</button></div>
 <div id="main" class="hide"><div class="intro"><span class="badge">会員なら誰でも企画OK</span><h2>みんなで、次の楽しい予定を。</h2><p>イベントを提案したり、参加表明したり。新しいイベントは会員全員の画面に反映されます。</p></div>
 <nav class="nav"><button data-tab="events" class="active">🎉 イベント</button><button data-tab="calendar">🗓 カレンダー</button><button data-tab="profile">👤 マイページ</button><button data-tab="admin" id="adminTab" class="hide">🛡 会員管理</button></nav>
 <section id="eventsPage"><div class="row" style="margin:6px 0 16px"><div><h2>イベント一覧</h2><div id="eventTotal" class="muted"></div></div><button id="newEvent" class="btn">＋ イベントを企画する</button></div>
@@ -21,10 +23,10 @@
   <div class="row"><div><h2>会員管理</h2><p class="muted">管理者専用。一般会員の利用停止・解除・退会を管理します。</p></div></div>
   <div class="panel">
     <div class="grid">
-      <div class="field"><label for="memberFilter">状態で絞り込む</label><select id="memberFilter"><option value="">すべて</option><option value="active">利用中</option><option value="suspended">利用停止</option><option value="removed">強制退会</option><option value="admin">管理者</option></select></div>
+      <div class="field"><label for="memberFilter">状態で絞り込む</label><select id="memberFilter"><option value="pending">承認待ち</option><option value="">すべて</option><option value="active">利用中</option><option value="suspended">利用停止</option><option value="removed">強制退会</option><option value="rejected">却下済み</option><option value="admin">管理者</option></select></div>
       <div class="field"><label for="memberSearch">会員名を検索</label><input id="memberSearch" maxlength="100" placeholder="ニックネームで検索"></div>
     </div>
-    <p id="memberTotal" class="muted"></p>
+    <p class="pendingHelp">「承認待ち」の方はLINEグループに所属しているか確認してください。名前だけでは本人確認になりません。承認・却下の操作は履歴に残ります。</p><p id="memberTotal" class="muted"></p>
     <div id="memberList" class="stack"></div>
   </div>
   <div class="panel"><div class="row"><h2>管理操作の履歴</h2><span class="muted">直近50件</span></div><div id="auditList" class="stack"></div></div>
@@ -48,7 +50,7 @@
 </div>
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js';
 import {
   getFirestore, collection, doc, getDoc, addDoc, setDoc, updateDoc,
   onSnapshot, serverTimestamp, writeBatch, query, orderBy, limit
@@ -68,8 +70,8 @@ const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c =>
   ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
 const show = (selector, visible) => $(selector).classList.toggle('hide', !visible);
-const actionText = {suspend:'利用停止', resume:'停止解除', remove:'強制退会'};
-const statusText = {active:'利用中', suspended:'利用停止', removed:'強制退会'};
+const actionText = {suspend:'利用停止', resume:'停止解除', remove:'強制退会', approve:'入会承認', reject:'申請却下'};
+const statusText = {active:'利用中', suspended:'利用停止', removed:'強制退会', pending:'承認待ち', rejected:'却下済み'};
 
 let auth, db, currentUser = null, member = null;
 let events = [], rsvps = [], members = [], adminLogs = [];
@@ -103,6 +105,7 @@ function clearSession() {
   if (identityUnsub) identityUnsub(); identityUnsub = null;
   clearData(); member = null; memberReady = false;
   show('#main', false); show('#accessBlocked', false); show('#notMember', false);
+  show('#pending', false); show('#signup', false); show('#login', false);
   show('#adminTab', false);
 }
 function isAdmin() { return !!(member?.role === 'admin' && member?.status === 'active'); }
@@ -110,11 +113,11 @@ function isActive() { return !!(currentUser && member?.status === 'active'); }
 function stopAccess(status) {
   clearData(); memberReady = false;
   show('#main', false);
-  show('#accessBlocked', true); show('#notMember', false); show('#status', false);
-  $('#blockedTitle').textContent = status === 'removed' ? 'このアカウントは退会済みです' : 'このアカウントは利用停止中です';
+  show('#accessBlocked', true); show('#notMember', false); show('#pending', false); show('#status', false);
+  $('#blockedTitle').textContent = status === 'removed' ? 'このアカウントは退会済みです' : status === 'rejected' ? '入会申請は承認されませんでした' : 'このアカウントは利用停止中です';
   $('#blockedDescription').textContent = status === 'removed'
     ? '会員資格が取り消されているため、イベントの閲覧や投稿はできません。'
-    : '現在、イベントの閲覧・投稿・参加登録はできません。';
+    : status === 'rejected' ? '申請内容についてはLINEグループの運営者に直接お問い合わせください。' : '現在、イベントの閲覧・投稿・参加登録はできません。';
 }
 function subscribeActiveData() {
   if (dataStarted) return;
@@ -143,7 +146,7 @@ function stopAdminData() {
   if (activeTab === 'admin') activeTab = 'events';
 }
 function showActiveApp() {
-  show('#main', true); show('#notMember', false); show('#accessBlocked', false); show('#status', false);
+  show('#main', true); show('#notMember', false); show('#accessBlocked', false); show('#pending', false); show('#status', false);
   show('#adminTab', isAdmin());
   $('#profileName').textContent = member.displayName || '会員';
   $('#profileEmail').textContent = currentUser.email || '';
@@ -167,12 +170,17 @@ try {
       if (currentGeneration !== authGeneration) return;
       if (!snap.exists()) {
         member = null; memberReady = false; clearData();
-        show('#main', false); show('#notMember', true); show('#accessBlocked', false); show('#status', false);
+        show('#main', false); show('#notMember', true); show('#pending', false); show('#accessBlocked', false); show('#status', false);
         return;
       }
       const oldRole = member?.role;
       const oldStatus = member?.status;
       member = snap.data();
+      if (member.status === 'pending') {
+        clearData(); show('#main', false); show('#accessBlocked', false); show('#notMember', false); show('#pending', true); show('#status', false);
+        $('#pendingInfo').textContent = `表示名：${member.displayName || '申請者'} ／ 状態：承認待ち`;
+        return;
+      }
       if (member.status !== 'active') { stopAccess(member.status); return; }
       if (oldStatus !== 'active') { memberReady = true; showActiveApp(); }
       else if (oldRole !== member.role) { if (isAdmin()) subscribeAdminData(); else stopAdminData(); show('#adminTab', isAdmin()); render(); }
@@ -193,6 +201,56 @@ $('#loginForm').addEventListener('submit', async event => {
 });
 $('#logoutWaiting').addEventListener('click', () => signOut(auth));
 $('#logoutBlocked').addEventListener('click', () => signOut(auth));
+$('#logoutPending').addEventListener('click', () => signOut(auth));
+$('#showSignup').addEventListener('click', () => { show('#login', false); show('#signup', true); $('#signupErr').textContent=''; });
+$('#backToLogin').addEventListener('click', () => { show('#signup', false); show('#login', true); });
+function authError(err) {
+  if (err?.code === 'auth/email-already-in-use') return 'このメールアドレスは登録されています。ログインをお試しください。';
+  if (err?.code === 'auth/weak-password') return 'パスワードの強度が不足しています。別のパスワードを設定してください。';
+  if (err?.code === 'auth/too-many-requests') return '試行回数が多いため、一時的に制限されています。時間をおいてください。';
+  if (err?.code === 'auth/invalid-email') return 'メールアドレスを確認してください。';
+  if (err?.code === 'permission-denied') return '会員申請の保存が拒否されました。Firestoreルールがv2.2に更新されているか確認してください。';
+  return errorText(err);
+}
+async function submitApplication(name, note) {
+  const signedUser = auth.currentUser;
+  if (!signedUser) throw new Error('ログイン状態を確認できません。');
+  const displayName = name.trim(), applicationNote = note.trim();
+  if (!displayName || displayName.length > 40 || applicationNote.length > 200) throw new Error('表示名は1〜40文字、メッセージは200文字以内です。');
+  await setDoc(doc(db, 'members', signedUser.uid), {
+    displayName, role:'member', status:'pending', email:signedUser.email,
+    applicationNote, requestedAt:serverTimestamp()
+  });
+}
+$('#signupForm').addEventListener('submit', async event => {
+  event.preventDefault(); const btn=$('#submitSignup'); btn.disabled=true; $('#signupErr').textContent='';
+  const pass=$('#signupPassword').value;
+  if (pass !== $('#signupPasswordConfirm').value) { $('#signupErr').textContent='確認用パスワードが一致しません。'; btn.disabled=false; return; }
+  try {
+    const name=$('#signupName').value.trim(), note=$('#signupNote').value.trim();
+    await createUserWithEmailAndPassword(auth,$('#signupEmail').value.trim(),pass);
+    $('#applyName').value=name; $('#applyNote').value=note;
+    await submitApplication(name,note);
+    $('#signupForm').reset();
+    show('#signup',false); toast('入会申請を受け付けました。管理者の確認をお待ちください。');
+  } catch (err) {
+    $('#signupErr').textContent=authError(err);
+    // 認証ユーザー作成だけ成功した場合は「申請が未登録です」から再送できる。
+    if (currentUser) { show('#signup',false); show('#notMember',true); $('#applyErr').textContent=authError(err); }
+  } finally {btn.disabled=false;}
+});
+$('#applyForm').addEventListener('submit', async event => {
+  event.preventDefault(); const btn=$('#applySubmit');btn.disabled=true;$('#applyErr').textContent='';
+  try { await submitApplication($('#applyName').value,$('#applyNote').value);toast('申請を受け付けました。'); }
+  catch (err) {$('#applyErr').textContent=authError(err);}
+  finally {btn.disabled=false;}
+});
+$('#resetPassword').addEventListener('click', async () => {
+  const email=prompt('再設定メールを受け取るメールアドレスを入力してください', $('#email').value.trim());
+  if (!email) return;
+  try { await sendPasswordResetEmail(auth,email.trim());alert('登録状況に応じて再設定メールが送信されます。届かない場合は迷惑メールもご確認ください。'); }
+  catch(err) {alert(authError(err));}
+});
 document.querySelectorAll('[data-tab]').forEach(btn => btn.addEventListener('click', () => {
   if (btn.dataset.tab === 'admin' && !isAdmin()) return;
   activeTab = btn.dataset.tab; render();
@@ -307,15 +365,19 @@ function renderAdmin() {
   if (!isAdmin()) return;
   const search=$('#memberSearch').value.toLowerCase().trim(), filter=$('#memberFilter').value;
   const items=members.filter(m => (!filter || (filter === 'admin' ? m.role === 'admin' : m.status === filter)) && (!search || (m.displayName||'').toLowerCase().includes(search)))
-    .sort((a,b) => (a.role === 'admin' ? 0 : 1) - (b.role === 'admin' ? 0 : 1) || (a.displayName||'').localeCompare(b.displayName||'','ja'));
-  $('#memberTotal').textContent=`表示 ${items.length}名 / 登録 ${members.length}名（管理者を含む）`;
+    .sort((a,b) => (a.status === 'pending' ? 0 : a.role === 'admin' ? 1 : 2) - (b.status === 'pending' ? 0 : b.role === 'admin' ? 1 : 2) || (a.displayName||'').localeCompare(b.displayName||'','ja'));
+  const waiting=members.filter(m=>m.status==='pending').length;
+  $('#memberTotal').textContent=`表示 ${items.length}名 / 登録 ${members.length}名（管理者を含む）／ 承認待ち ${waiting}名`;
+  $('#adminTab').textContent = waiting ? `🛡 会員管理（申請${waiting}件）` : '🛡 会員管理';
   $('#memberList').innerHTML=items.length ? items.map(m => {
     const protectedAccount=m.role === 'admin' || m.uid === currentUser.uid;
     const status=m.status || '未設定';
     let buttons='';
+    if (!protectedAccount && status==='pending') buttons=`<button class="btn small" data-manage="approve" data-uid="${esc(m.uid)}">承認する</button><button class="btn danger small" data-manage="reject" data-uid="${esc(m.uid)}">申請を却下</button>`;
     if (!protectedAccount && status==='active') buttons=`<button class="btn outline small" data-manage="suspend" data-uid="${esc(m.uid)}">利用停止</button><button class="btn danger small" data-manage="remove" data-uid="${esc(m.uid)}">強制退会</button>`;
     if (!protectedAccount && status==='suspended') buttons=`<button class="btn outline small" data-manage="resume" data-uid="${esc(m.uid)}">停止解除</button><button class="btn danger small" data-manage="remove" data-uid="${esc(m.uid)}">強制退会</button>`;
-    return `<div class="member-row"><div class="row"><div><div class="name">${esc(m.displayName || '名前未登録')}</div><div class="member-meta">${m.role==='admin'?'管理者':'一般会員'}</div></div><div class="row"><span class="flag ${esc(status)}">${esc(statusText[status]||'状態未設定')}</span>${m.role==='admin'?'<span class="flag admin">管理者</span>':''}</div></div><div class="member-actions">${buttons || `<span class="muted">${protectedAccount?'管理者はアプリから停止・退会できません。':'操作できません。'}</span>`}</div></div>`;
+    const application = status==='pending' ? `<div class="member-note">申請メッセージ：${esc(m.applicationNote || '（なし）')}</div><div class="emailText">メール：${esc(m.email || '未登録')}</div>` : '';
+    return `<div class="member-row"><div class="row"><div><div class="name">${esc(m.displayName || '名前未登録')}</div><div class="member-meta">${m.role==='admin'?'管理者':'一般会員'}</div></div><div class="row"><span class="flag ${esc(status)}">${esc(statusText[status]||'状態未設定')}</span>${m.role==='admin'?'<span class="flag admin">管理者</span>':''}</div></div>${application}<div class="member-actions">${buttons || `<span class="muted">${protectedAccount?'管理者はアプリから停止・退会できません。':'操作できません。'}</span>`}</div></div>`;
   }).join('') : '<p class="muted">該当する会員はいません。</p>';
   $('#auditList').innerHTML=adminLogs.length ? adminLogs.map(log => {
     const ts=log.createdAt?.toDate ? log.createdAt.toDate().toLocaleString('ja-JP') : '記録中';
@@ -327,15 +389,17 @@ function openManage(uid, action) {
   const target=members.find(m=>m.uid===uid);
   if (!target || target.role!=='member' || uid===currentUser.uid) return;
   const from=target.status;
-  const to=action==='suspend'?'suspended':action==='resume'?'active':'removed';
-  if (!(from==='active'&&action==='suspend'||from==='suspended'&&action==='resume'||['active','suspended'].includes(from)&&action==='remove')) return;
+  const to=action==='suspend'?'suspended':action==='resume'?'active':action==='approve'?'active':action==='reject'?'rejected':'removed';
+  if (!(from==='active'&&action==='suspend'||from==='suspended'&&action==='resume'||['active','suspended'].includes(from)&&action==='remove'||from==='pending'&&['approve','reject'].includes(action))) return;
   selectedManage={uid,action,from,to,name:target.displayName};
   $('#manageTitle').textContent=actionText[action];
   $('#manageSummary').textContent=`対象：${target.displayName}（${statusText[from]} → ${statusText[to]}）`;
   $('#manageWarning').textContent=action==='remove'
     ? '強制退会はアプリの会員資格を取り消します。アプリ内では元に戻せません。Firebase Authenticationのログインアカウント削除は別途、管理者がコンソールで行います。既存のイベント・参加履歴は自動削除されません。'
+    : action==='approve' ? 'LINEグループで本人の参加を確認してから承認してください。名前やメールアドレスだけで自動判定できません。承認するとイベントを利用できます。'
+    : action==='reject' ? '却下すると本人の画面に「申請が承認されませんでした」と表示します。本人はアプリから再申請できません。'
     : action==='suspend' ? '利用停止後は本人のイベント閲覧・新規投稿・参加登録が拒否されます。ログイン自体は残ります。' : '利用停止を解除すると、再びイベントの閲覧・投稿・参加登録ができるようになります。';
-  $('#manageReason').value=''; $('#removeConfirm').value=''; $('#manageError').textContent='';
+  $('#manageReason').value=action==='approve'?'LINEグループへの所属を確認しました。':''; $('#removeConfirm').value=''; $('#manageError').textContent='';
   show('#removeConfirmArea',action==='remove');
   $('#confirmManage').textContent=actionText[action]+'を実行する';
   show('#manageOverlay',true);
