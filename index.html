@@ -1,79 +1,381 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#167e78"><title>ゆるつな香川｜会員共有版</title>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#167e78"><title>ゆるつな香川｜会員管理版 v2.1</title>
 <style>
 :root{font-family:system-ui,-apple-system,'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif;background:#f2f7f5;color:#18352e;font-size:15px}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.55}a{color:#176f66}.app{max-width:1000px;margin:auto;padding:0 16px 96px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:19px 0 16px}.brand{display:flex;align-items:center;gap:11px}.logo{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:#168a7c;color:white;font-size:23px}h1{font-size:20px;margin:0}h2{font-size:18px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}p{line-height:1.65}.muted{color:#617c72;font-size:13px}.badge{display:inline-block;border-radius:99px;padding:5px 9px;background:#e4f2ec;color:#176c61;font-size:12px;font-weight:700}.btn{border:0;border-radius:11px;background:#148777;color:white;font-weight:700;padding:11px 15px}.btn.light{background:#e5f1ed;color:#176f66}.btn.outline{border:1px solid #bdd9ce;background:white;color:#176f66}.btn.danger{background:#fce8e6;color:#ad3530}.btn.small{padding:7px 10px;font-size:13px}.panel{background:#fff;border:1px solid #dfebe6;border-radius:17px;padding:19px;margin:0 0 17px;box-shadow:0 3px 15px #15433508}.intro{background:linear-gradient(125deg,#126f6a,#43aa8c);color:white;border-radius:19px;padding:24px;margin-bottom:18px}.intro h2{font-size:24px}.intro p{margin:7px 0 0;color:#eafbf4}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.stack{display:grid;gap:13px}.grid{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.field{display:grid;gap:6px}label{font-size:13px;font-weight:700}.field input,.field textarea,.field select,.filter{border:1px solid #bbd2c8;border-radius:10px;padding:11px;width:100%;background:white;color:#173a31}.field textarea{min-height:85px;resize:vertical}small{color:#62776f}.notice{border:1px solid #dfd3ad;background:#fffae9;border-radius:10px;padding:11px;font-size:13px}.err{color:#b52e2e;font-size:13px;white-space:pre-wrap}.empty{padding:30px;text-align:center;color:#637a72;border:1px dashed #b9d4cb;border-radius:13px}.nav{display:flex;gap:7px;flex-wrap:wrap;padding-bottom:17px}.nav button{border:1px solid #d1e5db;border-radius:11px;background:white;color:#28665b;font-weight:700;padding:9px 14px}.nav button.active{background:#187e74;border-color:#187e74;color:white}.event{padding:17px}.event h3{margin:5px 0 9px}.details{color:#566e65;font-size:13px;line-height:1.7}.event p{white-space:pre-wrap;margin:9px 0}.counts{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0}.counts span{background:#eff7f1;border-radius:9px;padding:6px 9px;font-size:12px}.answers{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 5px}.answers button{border:1px solid #c6ddd2;background:white;color:#1d5f53;border-radius:10px;padding:8px 12px}.answers button.selected{background:#147e72;color:white;border-color:#147e72}.names{font-size:12px;color:#648078}.calendarHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.week>div{text-align:center;font-size:12px;color:#71857e;padding:8px 0}.day{border:1px solid #e3ede8;background:white;min-height:66px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:7px 1px;cursor:pointer}.day.muted{opacity:.34}.dot{border-radius:99px;width:6px;height:6px;background:#139b82}.count{font-size:10px;color:#188378}.hide{display:none!important}.overlay{position:fixed;inset:0;background:#172a2485;display:grid;place-items:center;padding:15px;z-index:20}.dialog{background:white;border-radius:17px;width:min(560px,100%);max-height:92vh;overflow:auto;padding:18px}.dialog-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}.dialog-header h2{margin:0}.footer{font-size:12px;text-align:center;color:#668076;padding:16px}.pill{border-radius:99px;padding:7px 11px;background:#e6f2ed;font-size:12px;color:#22695f}.loading{background:#fff;border-radius:10px;padding:14px;margin:0 0 16px}@media(max-width:600px){.app{padding-inline:11px}.intro{padding:18px}.panel{padding:15px}.day{min-height:54px}.event{padding:14px}}
+.member-row{display:grid;gap:9px;padding:14px;border:1px solid #e1e9e5;border-radius:13px;background:#fcfffd}.member-row .name{font-size:16px;font-weight:700}.member-meta{font-size:12px;color:#5c746a}.flag{display:inline-block;padding:4px 8px;border-radius:8px;background:#e5f0ec;font-size:12px}.flag.suspended{color:#8d6000;background:#fff0d1}.flag.removed{color:#a33636;background:#ffe8e8}.flag.admin{color:#175d84;background:#e7f2fd}.audit-row{padding:10px;border-bottom:1px solid #e8efeb;font-size:13px;line-height:1.6}.audit-row:last-child{border-bottom:0}.audit-reason{white-space:pre-wrap;color:#5a6e66}.toast{position:fixed;right:16px;bottom:16px;background:#183c34;color:white;padding:12px 15px;border-radius:10px;z-index:40;max-width:400px;box-shadow:0 4px 18px #0003}.member-actions{display:flex;gap:6px;flex-wrap:wrap}
 </style></head><body>
 <div class="app">
-<header class="top"><div class="brand"><div class="logo">🌿</div><div><h1>ゆるつな香川</h1><div class="muted">香川県ゆるつな倶楽部・会員共有版 v2.0</div></div></div><div id="account" class="row"></div></header>
+<header class="top"><div class="brand"><div class="logo">🌿</div><div><h1>ゆるつな香川</h1><div class="muted">香川県ゆるつな倶楽部・会員共有版 v2.1</div></div></div><div id="account" class="row"></div></header>
 <div id="status" class="loading">アプリを準備しています…</div>
 <div id="setup" class="panel hide"><h2>初期設定が必要です</h2><p>Firebaseへの接続情報がまだ登録されていません。管理者が <code>index.html</code> 内の <code>firebaseConfig</code> を設定してからGitHub Pagesにアップロードしてください。</p><p class="muted">設定方法は同梱の「はじめにお読みください.txt」を参照してください。</p></div>
 <div id="login" class="panel hide"><h2>会員ログイン</h2><p class="muted">運営が発行したメールアドレスとパスワードでログインしてください。LINEログインは今後の開発で追加予定です。</p><form id="loginForm" class="stack"><div class="field"><label for="email">メールアドレス</label><input id="email" type="email" autocomplete="username" required></div><div class="field"><label for="password">パスワード</label><input id="password" type="password" autocomplete="current-password" required></div><button class="btn" type="submit">ログインする</button><div id="loginErr" class="err"></div></form></div>
+<div id="accessBlocked" class="panel hide"><h2 id="blockedTitle">利用を確認できません</h2><p id="blockedDescription"></p><p class="muted">お心当たりがない場合は、運営者に直接お問い合わせください。</p><button class="btn light" id="logoutBlocked">ログアウト</button></div>
 <div id="notMember" class="panel hide"><h2>会員承認待ちです</h2><p>ログインには成功しましたが、このアカウントはまだ会員リストに登録されていません。</p><p class="muted">Firebase管理画面の Authentication → ユーザー でUIDを確認し、Cloud Firestore の members コレクションに同じUIDの文書を登録してください。</p><button class="btn light" id="logoutWaiting">ログアウト</button></div>
 <div id="main" class="hide"><div class="intro"><span class="badge">会員なら誰でも企画OK</span><h2>みんなで、次の楽しい予定を。</h2><p>イベントを提案したり、参加表明したり。新しいイベントは会員全員の画面に反映されます。</p></div>
-<nav class="nav"><button data-tab="events" class="active">🎉 イベント</button><button data-tab="calendar">🗓 カレンダー</button><button data-tab="profile">👤 マイページ</button></nav>
+<nav class="nav"><button data-tab="events" class="active">🎉 イベント</button><button data-tab="calendar">🗓 カレンダー</button><button data-tab="profile">👤 マイページ</button><button data-tab="admin" id="adminTab" class="hide">🛡 会員管理</button></nav>
 <section id="eventsPage"><div class="row" style="margin:6px 0 16px"><div><h2>イベント一覧</h2><div id="eventTotal" class="muted"></div></div><button id="newEvent" class="btn">＋ イベントを企画する</button></div>
 <div class="panel row"><div style="flex:1;min-width:170px"><label for="areaFilter">地域を選ぶ</label><select class="filter" id="areaFilter"><option value="">すべての地域</option><option>高松</option><option>東讃</option><option>中讃</option><option>西讃</option><option>島しょ部</option><option>その他</option></select></div><div style="flex:2;min-width:190px"><label for="keyword">キーワード</label><input class="filter" id="keyword" placeholder="例：カラオケ、島めぐり"></div></div><div id="eventsList" class="stack"></div></section>
 <section id="calendarPage" class="hide"><div class="panel"><div class="calendarHead"><button class="btn outline small" id="prevMonth">‹ 前月</button><h2 id="monthName"></h2><button class="btn outline small" id="nextMonth">次月 ›</button></div><div class="week" id="calDays"></div><div id="dayEvents" style="margin-top:14px"></div></div></section>
 <section id="profilePage" class="hide"><div class="panel"><h2>マイページ</h2><p><strong id="profileName"></strong></p><p class="muted" id="profileEmail"></p><p>参加者のお名前と会員権限は、運営の管理画面で登録した内容を使用しています。</p><p class="notice">試作運用中は、イベントのタイトルや説明に住所、電話番号、病歴などの個人情報を入力しないでください。</p></div></section>
+<section id="adminPage" class="hide">
+  <div class="row"><div><h2>会員管理</h2><p class="muted">管理者専用。一般会員の利用停止・解除・退会を管理します。</p></div></div>
+  <div class="panel">
+    <div class="grid">
+      <div class="field"><label for="memberFilter">状態で絞り込む</label><select id="memberFilter"><option value="">すべて</option><option value="active">利用中</option><option value="suspended">利用停止</option><option value="removed">強制退会</option><option value="admin">管理者</option></select></div>
+      <div class="field"><label for="memberSearch">会員名を検索</label><input id="memberSearch" maxlength="100" placeholder="ニックネームで検索"></div>
+    </div>
+    <p id="memberTotal" class="muted"></p>
+    <div id="memberList" class="stack"></div>
+  </div>
+  <div class="panel"><div class="row"><h2>管理操作の履歴</h2><span class="muted">直近50件</span></div><div id="auditList" class="stack"></div></div>
+</section>
 </div>
 <footer class="footer">ゆるつな香川｜試作版・会員限定共有（Firebase）</footer>
 </div>
 <div id="eventOverlay" class="overlay hide"><div class="dialog"><div class="dialog-header"><h2 id="dialogTitle">イベントを企画する</h2><button class="btn light small" id="closeEvent">閉じる ✕</button></div><form id="eventForm" class="stack"><input id="eventId" type="hidden"><div class="field"><label for="title">イベント名 *</label><input id="title" required maxlength="90" placeholder="例：高松カラオケ会"></div><div class="grid"><div class="field"><label for="eventDate">開催日 *</label><input id="eventDate" type="date" required></div><div class="field"><label for="eventTime">開始時刻 *</label><input id="eventTime" type="time" required value="14:00"></div></div><div class="grid"><div class="field"><label for="area">地域 *</label><select id="area" required><option>高松</option><option>東讃</option><option>中讃</option><option>西讃</option><option>島しょ部</option><option>その他</option></select></div><div class="field"><label for="place">会場・集合場所 *</label><input id="place" required maxlength="120"></div></div><div class="grid"><div class="field"><label for="minimum">最低催行人数</label><input id="minimum" type="number" min="1" max="100" value="3" required></div><div class="field"><label for="capacity">定員（0なら無制限）</label><input id="capacity" type="number" min="0" max="200" value="0" required></div></div><div class="field"><label for="details">内容・参加費・注意事項</label><textarea id="details" maxlength="1200" placeholder="途中参加可、参加費は各自負担など"></textarea></div><p class="err" id="saveErr"></p><button class="btn" id="submitEvent" type="submit">イベントを保存する</button></form></div></div>
+<div id="manageOverlay" class="overlay hide" role="dialog" aria-modal="true" aria-labelledby="manageTitle">
+  <div class="dialog">
+    <div class="dialog-header"><h2 id="manageTitle">会員管理</h2><button id="closeManage" class="btn light small">閉じる ✕</button></div>
+    <form id="manageForm" class="stack">
+      <p id="manageSummary"></p>
+      <div class="notice" id="manageWarning"></div>
+      <div class="field"><label for="manageReason">操作理由（必須・5〜500文字）</label><textarea id="manageReason" required minlength="5" maxlength="500" placeholder="例：運営規約に反する投稿のため。本人に確認済み。"></textarea></div>
+      <div id="removeConfirmArea" class="field hide"><label for="removeConfirm">強制退会の確認：「退会」と入力</label><input id="removeConfirm" autocomplete="off" placeholder="退会"></div>
+      <p class="err" id="manageError" role="alert"></p>
+      <div class="row"><button type="button" class="btn outline" id="cancelManage">キャンセル</button><button type="submit" class="btn danger" id="confirmManage">実行する</button></div>
+    </form>
+  </div>
+</div>
 <script type="module">
-// ★ Firebaseの画面に表示される設定を、下の値に上書きします。
-// このオブジェクトはWebアプリ用の公開設定値です。秘密鍵ではありません。
-// 秘密を守るのはFirestoreのセキュリティルールと会員認証です。
-const firebaseConfig = {
-  apiKey: "AIzaSyDQnvY6uazCslQUqV9Yszmy-SA47XoZHz8",
-  authDomain: "yurutsuna-kagawa.firebaseapp.com",
-  projectId: "yurutsuna-kagawa",
-  storageBucket: "yurutsuna-kagawa.firebasestorage.app",
-  messagingSenderId: "546137363836",
-  appId: "1:546137363836:web:5b92e2bc42b773f633c0f9",
-  measurementId: "G-HSP03P0JB2"
-};
-
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js';
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js';
-import { getFirestore, collection, doc, getDoc, addDoc, setDoc, updateDoc, onSnapshot, serverTimestamp } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js';
-const $=s=>document.querySelector(s);
-const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const show=(sel,yes)=>$(sel).classList.toggle('hide',!yes);
-const regions=['高松','東讃','中讃','西讃','島しょ部','その他'];
-let auth, db, currentUser=null, member=null, events=[], rsvps=[], unsub=[], activeTab='events', month = new Date();
-function message(text){$('#status').textContent=text;show('#status',true)}
-function errorText(err){console.error(err);return err?.code==='permission-denied'?'権限がありません。会員登録やセキュリティルールを確認してください。':(err?.message||'通信エラーが発生しました。')}
-function clean(){unsub.forEach(fn=>fn());unsub=[]; events=[];rsvps=[];member=null;$('#account').innerHTML='';render()}
-if(firebaseConfig.apiKey.startsWith('ここに')){show('#setup',true);show('#status',false)}else{
- try{const app=initializeApp(firebaseConfig);auth=getAuth(app);db=getFirestore(app);onAuthStateChanged(auth,async u=>{
-   clean();currentUser=u;show('#login',!u);show('#main',false);show('#notMember',false);
-   if(!u){message('メールアドレスとパスワードでログインしてください。');show('#status',false);return}
-   message('会員登録を確認しています…');
-   try{const snap=await getDoc(doc(db,'members',u.uid));if(!snap.exists()){show('#notMember',true);show('#status',false);return}
-     member=snap.data();$('#profileName').textContent=member.displayName||'会員';$('#profileEmail').textContent=u.email||'';
-     $('#account').innerHTML=`<span class="pill">${esc(member.displayName||'会員')}</span><button id="logout" class="btn outline small">ログアウト</button>`;
-     $('#logout').addEventListener('click',()=>signOut(auth));show('#main',true);show('#status',false);
-     unsub.push(onSnapshot(collection(db,'events'),s=>{events=s.docs.map(d=>({id:d.id,...d.data()}));render()},e=>message(errorText(e))));
-     unsub.push(onSnapshot(collection(db,'rsvps'),s=>{rsvps=s.docs.map(d=>({id:d.id,...d.data()}));render()},e=>message(errorText(e))));
-   }catch(e){show('#notMember',true);message(errorText(e))}
- });}catch(e){message('Firebaseの初期化に失敗しました：'+errorText(e))}
+import {
+  getFirestore, collection, doc, getDoc, addDoc, setDoc, updateDoc,
+  onSnapshot, serverTimestamp, writeBatch, query, orderBy, limit
+} from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyDQnvY6uazCslQUqV9Yszmy-SA47XoZHz8',
+  authDomain: 'yurutsuna-kagawa.firebaseapp.com',
+  projectId: 'yurutsuna-kagawa',
+  storageBucket: 'yurutsuna-kagawa.firebasestorage.app',
+  messagingSenderId: '546137363836',
+  appId: '1:546137363836:web:5b92e2bc42b773f633c0f9',
+  measurementId: 'G-HSP03P0JB2'
+};
+
+const $ = selector => document.querySelector(selector);
+const esc = value => String(value ?? '').replace(/[&<>"']/g, c =>
+  ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
+const show = (selector, visible) => $(selector).classList.toggle('hide', !visible);
+const actionText = {suspend:'利用停止', resume:'停止解除', remove:'強制退会'};
+const statusText = {active:'利用中', suspended:'利用停止', removed:'強制退会'};
+
+let auth, db, currentUser = null, member = null;
+let events = [], rsvps = [], members = [], adminLogs = [];
+let identityUnsub = null, dataUnsubs = [], adminUnsubs = [];
+let dataStarted = false, adminStarted = false, memberReady = false;
+let activeTab = 'events', month = new Date(), selectedManage = null;
+let authGeneration = 0;
+
+function message(text) { $('#status').textContent = text; show('#status', true); }
+function errorText(error) {
+  console.error(error);
+  if (error?.code === 'permission-denied') return '権限がありません。ログイン状態とFirestoreのセキュリティルールを確認してください。';
+  if (error?.code === 'unavailable') return '通信できません。インターネット接続を確認してください。';
+  return error?.message || '通信エラーが発生しました。';
 }
-$('#loginForm').addEventListener('submit',async e=>{e.preventDefault();$('#loginErr').textContent='';let b=e.target.querySelector('button');b.disabled=true;try{await signInWithEmailAndPassword(auth,$('#email').value.trim(),$('#password').value)}catch(err){$('#loginErr').textContent=err?.code==='auth/invalid-credential'?'メールアドレスまたはパスワードが違います。':errorText(err)}finally{b.disabled=false}});
-$('#logoutWaiting').addEventListener('click',()=>signOut(auth));
-document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{activeTab=b.dataset.tab;render()}));
-$('#areaFilter').addEventListener('change',render);$('#keyword').addEventListener('input',render);
-function dateJP(d){if(!d)return '日付未定';let a=d.split('-');return `${a[0]}年${Number(a[1])}月${Number(a[2])}日`}
-function count(id,stat){return rsvps.filter(r=>r.eventId===id && r.status===stat).length}
-function answer(id){return rsvps.find(r=>r.eventId===id&&r.uid===currentUser?.uid)?.status||''}
-function displayEvent(ev){let yes=count(ev.id,'yes'),maybe=count(ev.id,'maybe'),no=count(ev.id,'no');let my=answer(ev.id);let isOwner=ev.organizerId===currentUser.uid||member?.role==='admin';let allowed=ev.status!=='cancelled';let names=rsvps.filter(r=>r.eventId===ev.id&&r.status==='yes').map(r=>esc(r.name||'参加希望')).join('、');let full=ev.capacity>0&&yes>=ev.capacity;return `<article class="panel event"><div class="row"><span class="badge">${ev.status==='cancelled'?'中止':yes>=ev.minimum?'最低人数に到達':'参加者募集中'} ／ ${esc(ev.area)}</span><span class="muted">主催：${esc(ev.organizerName)}</span></div><h3>${esc(ev.title)}</h3><div class="details">📅 ${dateJP(ev.date)} ${esc(ev.time)}　📍 ${esc(ev.place)}</div>${ev.details?`<p>${esc(ev.details)}</p>`:''}<div class="counts"><span>🙋 参加 ${yes}名</span><span>🤔 検討中 ${maybe}名</span><span>— 不参加 ${no}名</span><span>最低催行 ${ev.minimum}名</span>${ev.capacity?`<span>定員 ${ev.capacity}名</span>`:''}</div>${names?`<p class="names">参加予定：${names}</p>`:''}${allowed?`<div class="answers"><button data-rsvp="${ev.id}" data-answer="yes" class="${my==='yes'?'selected':''}" ${full&&my!=='yes'?'disabled':''}>参加する</button><button data-rsvp="${ev.id}" data-answer="maybe" class="${my==='maybe'?'selected':''}">検討中</button><button data-rsvp="${ev.id}" data-answer="no" class="${my==='no'?'selected':''}">不参加</button></div>`:''}<div class="row" style="margin-top:12px">${isOwner?`<div class="row"><button class="btn outline small" data-edit="${ev.id}">企画を編集</button>${ev.status!=='cancelled'?`<button class="btn danger small" data-cancel="${ev.id}">開催を中止する</button>`:''}</div>`:'<span></span>'}<button class="btn light small" data-share="${ev.id}">LINEで案内</button></div></article>`}
-function render(){if(!member)return;document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===activeTab));show('#eventsPage',activeTab==='events');show('#calendarPage',activeTab==='calendar');show('#profilePage',activeTab==='profile');let area=$('#areaFilter').value,k=$('#keyword').value.toLowerCase().trim();let list=events.filter(ev=>(!area||ev.area===area)&&(!k||[ev.title,ev.place,ev.details].join(' ').toLowerCase().includes(k))).sort((a,b)=>a.date.localeCompare(b.date));$('#eventTotal').textContent=`全 ${list.length} 件の企画（取消済み含む）`;$('#eventsList').innerHTML=list.length?list.map(displayEvent).join(''):'<div class="empty">イベントがまだありません。最初の企画を投稿してみましょう！</div>';renderCalendar()}
-function renderCalendar(){if(!member)return;let y=month.getFullYear(),m=month.getMonth();$('#monthName').textContent=`${y}年${m+1}月`;let first=new Date(y,m,1),start=first.getDay(),max=new Date(y,m+1,0).getDate(),items='';for(let w of ['日','月','火','水','木','金','土'])items+=`<div>${w}</div>`;for(let i=0;i<start;i++)items+='<div></div>';for(let d=1;d<=max;d++){let date=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;let n=events.filter(e=>e.date===date&&e.status!=='cancelled').length;items+=`<button class="day" data-day="${date}"><strong>${d}</strong>${n?`<span class="dot"></span><span class="count">${n}件</span>`:''}</button>`}$('#calDays').innerHTML=items;$('#dayEvents').innerHTML='<div class="muted">日付を選ぶと、その日のイベントが表示されます。</div>'}
-$('#prevMonth').addEventListener('click',()=>{month=new Date(month.getFullYear(),month.getMonth()-1,1);renderCalendar()});$('#nextMonth').addEventListener('click',()=>{month=new Date(month.getFullYear(),month.getMonth()+1,1);renderCalendar()});
-function closeDialog(){show('#eventOverlay',false)}
-function openDialog(ev){$('#eventForm').reset();$('#saveErr').textContent='';$('#eventId').value=ev?.id||'';$('#dialogTitle').textContent=ev?'企画を編集する':'新しいイベントを企画する';$('#title').value=ev?.title||'';$('#eventDate').value=ev?.date||'';$('#eventTime').value=ev?.time||'14:00';$('#place').value=ev?.place||'';$('#area').value=ev?.area||'高松';$('#minimum').value=ev?.minimum??3;$('#capacity').value=ev?.capacity??0;$('#details').value=ev?.details||'';show('#eventOverlay',true)}
-$('#newEvent').addEventListener('click',()=>openDialog());$('#closeEvent').addEventListener('click',closeDialog);
-$('#eventForm').addEventListener('submit',async e=>{e.preventDefault();if(!member)return;let eventId=$('#eventId').value.trim(),minimum=Number($('#minimum').value),capacity=Number($('#capacity').value);if(capacity&&capacity<minimum){$('#saveErr').textContent='定員は最低催行人数以上にしてください。';return}let data={title:$('#title').value.trim(),date:$('#eventDate').value,time:$('#eventTime').value,place:$('#place').value.trim(),area:$('#area').value,details:$('#details').value.trim(),minimum,capacity,updatedAt:serverTimestamp()};let b=$('#submitEvent');b.disabled=true;$('#saveErr').textContent='';try{if(eventId){let existing=events.find(ev=>ev.id===eventId);if(!existing)throw Error('イベントが見つかりません');if(existing.organizerId!==currentUser.uid&&member.role!=='admin')throw Error('編集権限がありません');await updateDoc(doc(db,'events',eventId),data)}else{await addDoc(collection(db,'events'),{...data,organizerId:currentUser.uid,organizerName:member.displayName||'会員',status:'open',createdAt:serverTimestamp()})}closeDialog()}catch(err){$('#saveErr').textContent=errorText(err)}finally{b.disabled=false}});
-async function saveRsvp(id,status){let ev=events.find(e=>e.id===id);if(!ev||ev.status==='cancelled')return;let current=answer(id);if(status==='yes'&&ev.capacity&&count(id,'yes')>=ev.capacity&&current!=='yes'){alert('現在、定員に達しています。');return}try{await setDoc(doc(db,'rsvps',`${id}_${currentUser.uid}`),{uid:currentUser.uid,eventId:id,name:member.displayName||'会員',status,updatedAt:serverTimestamp()},{merge:true})}catch(err){alert(errorText(err))}}
-function share(ev){let text=`【ゆるつな倶楽部イベント】\n${ev.title}\n日時：${dateJP(ev.date)} ${ev.time}\n場所：${ev.place}\n地域：${ev.area}\n${ev.details||''}\n参加登録：${location.href}`;if(navigator.share){navigator.share({title:ev.title,text}).catch(()=>{});}else if(navigator.clipboard?.writeText){navigator.clipboard.writeText(text).then(()=>alert('LINE用の案内文をコピーしました。')).catch(()=>prompt('下記をコピーしてください',text))}else{prompt('下記をコピーしてください',text)}}
-function attachClick(e){let btn=e.target.closest('button');if(!btn)return;let d=btn.dataset;if(d.rsvp)saveRsvp(d.rsvp,d.answer);if(d.edit){let ev=events.find(x=>x.id===d.edit);if(ev)openDialog(ev)}if(d.cancel){let ev=events.find(x=>x.id===d.cancel);if(ev&&(ev.organizerId===currentUser.uid||member.role==='admin')&&confirm('このイベントを中止しますか？'))updateDoc(doc(db,'events',d.cancel),{status:'cancelled',updatedAt:serverTimestamp()}).catch(err=>alert(errorText(err)))}if(d.share){let ev=events.find(x=>x.id===d.share);if(ev)share(ev)}if(d.day){let dayEvents=events.filter(v=>v.date===d.day).sort((a,b)=>a.time.localeCompare(b.time));$('#dayEvents').innerHTML=`<h3>${dateJP(d.day)}のイベント</h3>`+(dayEvents.length?dayEvents.map(displayEvent).join(''):'<div class="muted">この日のイベントはありません。</div>')}}document.addEventListener('click',attachClick);
+function toast(text) {
+  document.querySelector('.toast')?.remove();
+  const el = document.createElement('div');
+  el.className = 'toast'; el.textContent = text; el.setAttribute('role', 'status');
+  document.body.append(el);
+  // 自動で消さず、次の操作時に差し替える。読み上げにも配慮。
+}
+function clearData() {
+  dataUnsubs.forEach(fn => fn()); dataUnsubs = []; dataStarted = false;
+  adminUnsubs.forEach(fn => fn()); adminUnsubs = []; adminStarted = false;
+  events = []; rsvps = []; members = []; adminLogs = [];
+  show('#manageOverlay', false); show('#eventOverlay', false);
+  $('#account').textContent = '';
+}
+function clearSession() {
+  if (identityUnsub) identityUnsub(); identityUnsub = null;
+  clearData(); member = null; memberReady = false;
+  show('#main', false); show('#accessBlocked', false); show('#notMember', false);
+  show('#adminTab', false);
+}
+function isAdmin() { return !!(member?.role === 'admin' && member?.status === 'active'); }
+function isActive() { return !!(currentUser && member?.status === 'active'); }
+function stopAccess(status) {
+  clearData(); memberReady = false;
+  show('#main', false);
+  show('#accessBlocked', true); show('#notMember', false); show('#status', false);
+  $('#blockedTitle').textContent = status === 'removed' ? 'このアカウントは退会済みです' : 'このアカウントは利用停止中です';
+  $('#blockedDescription').textContent = status === 'removed'
+    ? '会員資格が取り消されているため、イベントの閲覧や投稿はできません。'
+    : '現在、イベントの閲覧・投稿・参加登録はできません。';
+}
+function subscribeActiveData() {
+  if (dataStarted) return;
+  dataStarted = true;
+  dataUnsubs.push(onSnapshot(collection(db, 'events'), snap => {
+    events = snap.docs.map(d => ({id:d.id, ...d.data()})); render();
+  }, err => message(errorText(err))));
+  dataUnsubs.push(onSnapshot(collection(db, 'rsvps'), snap => {
+    rsvps = snap.docs.map(d => ({id:d.id, ...d.data()})); render();
+  }, err => message(errorText(err))));
+}
+function subscribeAdminData() {
+  if (adminStarted || !isAdmin()) return;
+  adminStarted = true;
+  adminUnsubs.push(onSnapshot(collection(db, 'members'), snap => {
+    members = snap.docs.map(d => ({uid:d.id, ...d.data()})); renderAdmin();
+  }, err => message(errorText(err))));
+  // SDKの query + limit を使い、直近50件の監査履歴を取得。
+  adminUnsubs.push(onSnapshot(query(collection(db, 'adminLogs'), orderBy('createdAt', 'desc'), limit(50)), snap => {
+    adminLogs = snap.docs.map(d => ({id:d.id, ...d.data()})); renderAdmin();
+  }, err => message(errorText(err))));
+}
+function stopAdminData() {
+  adminUnsubs.forEach(fn => fn()); adminUnsubs = []; adminStarted = false;
+  members = []; adminLogs = [];
+  if (activeTab === 'admin') activeTab = 'events';
+}
+function showActiveApp() {
+  show('#main', true); show('#notMember', false); show('#accessBlocked', false); show('#status', false);
+  show('#adminTab', isAdmin());
+  $('#profileName').textContent = member.displayName || '会員';
+  $('#profileEmail').textContent = currentUser.email || '';
+  $('#account').innerHTML = `<span class="pill">${esc(member.displayName || '会員')}</span><button id="logout" class="btn outline small">ログアウト</button>`;
+  $('#logout').addEventListener('click', () => signOut(auth));
+  subscribeActiveData();
+  if (isAdmin()) subscribeAdminData(); else stopAdminData();
+  render();
+}
+
+try {
+  const app = initializeApp(firebaseConfig);
+  auth = getAuth(app); db = getFirestore(app);
+  onAuthStateChanged(auth, user => {
+    const currentGeneration = ++authGeneration;
+    clearSession(); currentUser = user;
+    show('#login', !user);
+    if (!user) { show('#status', false); return; }
+    message('会員情報を確認しています…');
+    identityUnsub = onSnapshot(doc(db, 'members', user.uid), snap => {
+      if (currentGeneration !== authGeneration) return;
+      if (!snap.exists()) {
+        member = null; memberReady = false; clearData();
+        show('#main', false); show('#notMember', true); show('#accessBlocked', false); show('#status', false);
+        return;
+      }
+      const oldRole = member?.role;
+      const oldStatus = member?.status;
+      member = snap.data();
+      if (member.status !== 'active') { stopAccess(member.status); return; }
+      if (oldStatus !== 'active') { memberReady = true; showActiveApp(); }
+      else if (oldRole !== member.role) { if (isAdmin()) subscribeAdminData(); else stopAdminData(); show('#adminTab', isAdmin()); render(); }
+      else { render(); }
+    }, err => {
+      if (currentGeneration !== authGeneration) return;
+      clearData(); show('#main', false); message(errorText(err));
+    });
+  });
+} catch (err) { message('Firebase初期化に失敗しました：' + errorText(err)); }
+
+$('#loginForm').addEventListener('submit', async event => {
+  event.preventDefault(); $('#loginErr').textContent = '';
+  const btn = event.target.querySelector('button'); btn.disabled = true;
+  try { await signInWithEmailAndPassword(auth, $('#email').value.trim(), $('#password').value); }
+  catch (err) { $('#loginErr').textContent = err?.code === 'auth/invalid-credential' ? 'メールアドレスまたはパスワードが違います。' : errorText(err); }
+  finally { btn.disabled = false; }
+});
+$('#logoutWaiting').addEventListener('click', () => signOut(auth));
+$('#logoutBlocked').addEventListener('click', () => signOut(auth));
+document.querySelectorAll('[data-tab]').forEach(btn => btn.addEventListener('click', () => {
+  if (btn.dataset.tab === 'admin' && !isAdmin()) return;
+  activeTab = btn.dataset.tab; render();
+}));
+$('#areaFilter').addEventListener('change', render);
+$('#keyword').addEventListener('input', render);
+$('#memberFilter').addEventListener('change', renderAdmin);
+$('#memberSearch').addEventListener('input', renderAdmin);
+
+function dateJP(date) {
+  if (!date) return '日付未定';
+  const a = date.split('-'); return `${a[0]}年${Number(a[1])}月${Number(a[2])}日`;
+}
+function count(id, stat) { return rsvps.filter(r => r.eventId === id && r.status === stat).length; }
+function answer(id) { return rsvps.find(r => r.eventId === id && r.uid === currentUser?.uid)?.status || ''; }
+function displayEvent(ev) {
+  const yes=count(ev.id,'yes'), maybe=count(ev.id,'maybe'), no=count(ev.id,'no');
+  const my=answer(ev.id), isOwner=ev.organizerId === currentUser.uid || isAdmin();
+  const allowed=ev.status !== 'cancelled';
+  const names=rsvps.filter(r => r.eventId === ev.id && r.status === 'yes').map(r => esc(r.name || '参加希望')).join('、');
+  const full = ev.capacity > 0 && yes >= ev.capacity;
+  return `<article class="panel event">
+    <div class="row"><span class="badge">${ev.status === 'cancelled' ? '中止' : yes >= ev.minimum ? '最低人数に到達' : '参加者募集中'} ／ ${esc(ev.area)}</span><span class="muted">主催：${esc(ev.organizerName)}</span></div>
+    <h3>${esc(ev.title)}</h3><div class="details">📅 ${dateJP(ev.date)} ${esc(ev.time)}　📍 ${esc(ev.place)}</div>
+    ${ev.details ? `<p>${esc(ev.details)}</p>` : ''}
+    <div class="counts"><span>🙋 参加 ${yes}名</span><span>🤔 検討中 ${maybe}名</span><span>— 不参加 ${no}名</span><span>最低催行 ${ev.minimum}名</span>${ev.capacity ? `<span>定員 ${ev.capacity}名</span>` : ''}</div>
+    ${names ? `<p class="names">参加予定：${names}</p>` : ''}
+    ${allowed ? `<div class="answers">
+      <button data-rsvp="${esc(ev.id)}" data-answer="yes" class="${my === 'yes' ? 'selected' : ''}" ${full && my !== 'yes' ? 'disabled' : ''}>参加する</button>
+      <button data-rsvp="${esc(ev.id)}" data-answer="maybe" class="${my === 'maybe' ? 'selected' : ''}">検討中</button>
+      <button data-rsvp="${esc(ev.id)}" data-answer="no" class="${my === 'no' ? 'selected' : ''}">不参加</button></div>` : ''}
+    <div class="row" style="margin-top:12px">
+      ${isOwner ? `<div class="row"><button class="btn outline small" data-edit="${esc(ev.id)}">企画を編集</button>${ev.status !== 'cancelled' ? `<button class="btn danger small" data-cancel="${esc(ev.id)}">開催を中止する</button>` : ''}</div>` : '<span></span>'}
+      <button class="btn light small" data-share="${esc(ev.id)}">LINEで案内</button>
+    </div></article>`;
+}
+function render() {
+  if (!isActive()) return;
+  document.querySelectorAll('[data-tab]').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === activeTab));
+  show('#eventsPage',activeTab === 'events'); show('#calendarPage',activeTab === 'calendar');
+  show('#profilePage',activeTab === 'profile'); show('#adminPage',activeTab === 'admin' && isAdmin());
+  const area=$('#areaFilter').value, term=$('#keyword').value.toLowerCase().trim();
+  const list=events.filter(ev => (!area || ev.area === area) && (!term || [ev.title,ev.place,ev.details].join(' ').toLowerCase().includes(term))).sort((a,b) => a.date.localeCompare(b.date));
+  $('#eventTotal').textContent=`全 ${list.length} 件の企画（取消済み含む）`;
+  $('#eventsList').innerHTML=list.length ? list.map(displayEvent).join('') : '<div class="empty">イベントがまだありません。最初の企画を投稿してみましょう！</div>';
+  renderCalendar();
+  if (activeTab === 'admin') renderAdmin();
+}
+function renderCalendar() {
+  if (!isActive()) return;
+  const y=month.getFullYear(), m=month.getMonth();
+  $('#monthName').textContent=`${y}年${m+1}月`;
+  const start=new Date(y,m,1).getDay(), max=new Date(y,m+1,0).getDate();
+  let items=['日','月','火','水','木','金','土'].map(w => `<div>${w}</div>`).join('');
+  for(let i=0;i<start;i++) items+='<div></div>';
+  for(let d=1; d<=max;d++) {
+    const date=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const n=events.filter(ev => ev.date === date && ev.status !== 'cancelled').length;
+    items+=`<button class="day" data-day="${date}"><strong>${d}</strong>${n ? `<span class="dot"></span><span class="count">${n}件</span>` : ''}</button>`;
+  }
+  $('#calDays').innerHTML=items;
+  $('#dayEvents').innerHTML='<div class="muted">日付を選ぶと、その日のイベントが表示されます。</div>';
+}
+$('#prevMonth').addEventListener('click', () => {month=new Date(month.getFullYear(),month.getMonth()-1,1); renderCalendar();});
+$('#nextMonth').addEventListener('click', () => {month=new Date(month.getFullYear(),month.getMonth()+1,1); renderCalendar();});
+function openEventDialog(ev) {
+  if (!isActive()) return;
+  $('#eventForm').reset(); $('#saveErr').textContent='';
+  $('#eventId').value=ev?.id || ''; $('#dialogTitle').textContent=ev ? '企画を編集する' : '新しいイベントを企画する';
+  $('#title').value=ev?.title || ''; $('#eventDate').value=ev?.date || '';
+  $('#eventTime').value=ev?.time || '14:00'; $('#place').value=ev?.place || '';
+  $('#area').value=ev?.area || '高松'; $('#minimum').value=ev?.minimum ?? 3;
+  $('#capacity').value=ev?.capacity ?? 0; $('#details').value=ev?.details || '';
+  show('#eventOverlay', true);
+}
+$('#newEvent').addEventListener('click', () => openEventDialog());
+$('#closeEvent').addEventListener('click', () => show('#eventOverlay', false));
+$('#eventForm').addEventListener('submit', async event => {
+  event.preventDefault(); if (!isActive()) return;
+  const id=$('#eventId').value.trim(), minimum=Number($('#minimum').value), capacity=Number($('#capacity').value);
+  if (capacity && capacity < minimum) {$('#saveErr').textContent='定員は最低催行人数以上にしてください。';return;}
+  const data={title:$('#title').value.trim(),date:$('#eventDate').value,time:$('#eventTime').value,place:$('#place').value.trim(),area:$('#area').value,details:$('#details').value.trim(),minimum,capacity,updatedAt:serverTimestamp()};
+  const btn=$('#submitEvent');btn.disabled=true;$('#saveErr').textContent='';
+  try {
+    if (id) {
+      const old=events.find(ev=>ev.id===id);
+      if (!old || (old.organizerId !== currentUser.uid && !isAdmin())) throw Error('編集権限がありません');
+      await updateDoc(doc(db,'events',id),data);
+    } else await addDoc(collection(db,'events'), {...data,organizerId:currentUser.uid,organizerName:member.displayName||'会員',status:'open',createdAt:serverTimestamp()});
+    show('#eventOverlay',false);toast('イベントを保存しました。');
+  } catch(err) {$('#saveErr').textContent=errorText(err);}
+  finally {btn.disabled=false;}
+});
+async function saveRsvp(id, status) {
+  if (!isActive()) return;
+  const ev=events.find(e=>e.id===id);
+  if (!ev || ev.status === 'cancelled') return;
+  const current=answer(id);
+  if (status === 'yes' && ev.capacity && count(id,'yes')>=ev.capacity && current!=='yes') {alert('現在、定員に達しています。');return;}
+  try {
+    await setDoc(doc(db,'rsvps',`${id}_${currentUser.uid}`),{uid:currentUser.uid,eventId:id,name:member.displayName||'会員',status,updatedAt:serverTimestamp()},{merge:true});
+    toast('参加回答を保存しました。');
+  } catch(err) {alert(errorText(err));}
+}
+function share(ev) {
+  const text=`【ゆるつな倶楽部イベント】\n${ev.title}\n日時：${dateJP(ev.date)} ${ev.time}\n場所：${ev.place}\n地域：${ev.area}\n${ev.details||''}\n参加登録：${location.href}`;
+  if (navigator.share) navigator.share({title:ev.title,text}).catch(()=>{});
+  else if (navigator.clipboard?.writeText) navigator.clipboard.writeText(text).then(()=>toast('案内文をコピーしました。')).catch(()=>prompt('以下をコピーしてください',text));
+  else prompt('以下をコピーしてください',text);
+}
+function renderAdmin() {
+  if (!isAdmin()) return;
+  const search=$('#memberSearch').value.toLowerCase().trim(), filter=$('#memberFilter').value;
+  const items=members.filter(m => (!filter || (filter === 'admin' ? m.role === 'admin' : m.status === filter)) && (!search || (m.displayName||'').toLowerCase().includes(search)))
+    .sort((a,b) => (a.role === 'admin' ? 0 : 1) - (b.role === 'admin' ? 0 : 1) || (a.displayName||'').localeCompare(b.displayName||'','ja'));
+  $('#memberTotal').textContent=`表示 ${items.length}名 / 登録 ${members.length}名（管理者を含む）`;
+  $('#memberList').innerHTML=items.length ? items.map(m => {
+    const protectedAccount=m.role === 'admin' || m.uid === currentUser.uid;
+    const status=m.status || '未設定';
+    let buttons='';
+    if (!protectedAccount && status==='active') buttons=`<button class="btn outline small" data-manage="suspend" data-uid="${esc(m.uid)}">利用停止</button><button class="btn danger small" data-manage="remove" data-uid="${esc(m.uid)}">強制退会</button>`;
+    if (!protectedAccount && status==='suspended') buttons=`<button class="btn outline small" data-manage="resume" data-uid="${esc(m.uid)}">停止解除</button><button class="btn danger small" data-manage="remove" data-uid="${esc(m.uid)}">強制退会</button>`;
+    return `<div class="member-row"><div class="row"><div><div class="name">${esc(m.displayName || '名前未登録')}</div><div class="member-meta">${m.role==='admin'?'管理者':'一般会員'}</div></div><div class="row"><span class="flag ${esc(status)}">${esc(statusText[status]||'状態未設定')}</span>${m.role==='admin'?'<span class="flag admin">管理者</span>':''}</div></div><div class="member-actions">${buttons || `<span class="muted">${protectedAccount?'管理者はアプリから停止・退会できません。':'操作できません。'}</span>`}</div></div>`;
+  }).join('') : '<p class="muted">該当する会員はいません。</p>';
+  $('#auditList').innerHTML=adminLogs.length ? adminLogs.map(log => {
+    const ts=log.createdAt?.toDate ? log.createdAt.toDate().toLocaleString('ja-JP') : '記録中';
+    return `<div class="audit-row"><strong>${esc(actionText[log.action]||log.action)}</strong>：${esc(log.targetName)} ／ 操作者：${esc(log.actorName)}<div class="muted">${esc(ts)}　${esc(statusText[log.fromStatus])} → ${esc(statusText[log.toStatus])}</div><div class="audit-reason">理由：${esc(log.reason)}</div></div>`;
+  }).join('') : '<p class="muted">操作履歴はありません。</p>';
+}
+function openManage(uid, action) {
+  if (!isAdmin()) return;
+  const target=members.find(m=>m.uid===uid);
+  if (!target || target.role!=='member' || uid===currentUser.uid) return;
+  const from=target.status;
+  const to=action==='suspend'?'suspended':action==='resume'?'active':'removed';
+  if (!(from==='active'&&action==='suspend'||from==='suspended'&&action==='resume'||['active','suspended'].includes(from)&&action==='remove')) return;
+  selectedManage={uid,action,from,to,name:target.displayName};
+  $('#manageTitle').textContent=actionText[action];
+  $('#manageSummary').textContent=`対象：${target.displayName}（${statusText[from]} → ${statusText[to]}）`;
+  $('#manageWarning').textContent=action==='remove'
+    ? '強制退会はアプリの会員資格を取り消します。アプリ内では元に戻せません。Firebase Authenticationのログインアカウント削除は別途、管理者がコンソールで行います。既存のイベント・参加履歴は自動削除されません。'
+    : action==='suspend' ? '利用停止後は本人のイベント閲覧・新規投稿・参加登録が拒否されます。ログイン自体は残ります。' : '利用停止を解除すると、再びイベントの閲覧・投稿・参加登録ができるようになります。';
+  $('#manageReason').value=''; $('#removeConfirm').value=''; $('#manageError').textContent='';
+  show('#removeConfirmArea',action==='remove');
+  $('#confirmManage').textContent=actionText[action]+'を実行する';
+  show('#manageOverlay',true);
+}
+function closeManage() { show('#manageOverlay',false); selectedManage=null; }
+$('#closeManage').addEventListener('click',closeManage);
+$('#cancelManage').addEventListener('click',closeManage);
+$('#manageForm').addEventListener('submit',async event => {
+  event.preventDefault(); $('#manageError').textContent='';
+  if (!isAdmin() || !selectedManage) return;
+  const reason=$('#manageReason').value.trim();
+  if (reason.length<5 || reason.length>500) {$('#manageError').textContent='理由は5〜500文字で入力してください。';return;}
+  if (selectedManage.action==='remove' && $('#removeConfirm').value.trim()!=='退会') {$('#manageError').textContent='「退会」と入力してください。';return;}
+  const current=members.find(m=>m.uid===selectedManage.uid);
+  if (!current || current.role !== 'member' || current.status !== selectedManage.from) {$('#manageError').textContent='会員の状態が変わっています。画面を確認してやり直してください。';return;}
+  if (!confirm(`${selectedManage.name} さんを「${actionText[selectedManage.action]}」にします。よろしいですか？`)) return;
+  const btn=$('#confirmManage'); btn.disabled=true;
+  try {
+    const logRef=doc(collection(db,'adminLogs'));
+    const batch=writeBatch(db);
+    batch.update(doc(db,'members',selectedManage.uid), {status:selectedManage.to,updatedAt:serverTimestamp(),lastActionId:logRef.id});
+    batch.set(logRef, {actorUid:currentUser.uid,actorName:member.displayName,targetUid:selectedManage.uid,targetName:current.displayName,
+      fromStatus:selectedManage.from,toStatus:selectedManage.to,action:selectedManage.action,reason,createdAt:serverTimestamp()});
+    await batch.commit();
+    toast(`${current.displayName}さんの${actionText[selectedManage.action]}を記録しました。`);
+    closeManage();
+  } catch(err) {$('#manageError').textContent=errorText(err);}
+  finally {btn.disabled=false;}
+});
+function attachClick(event) {
+  const btn=event.target.closest('button'); if (!btn) return;
+  const d=btn.dataset;
+  if (d.manage && d.uid) {openManage(d.uid,d.manage);return;}
+  if (!isActive()) return;
+  if (d.rsvp) saveRsvp(d.rsvp,d.answer);
+  if (d.edit) {const ev=events.find(e=>e.id===d.edit);if(ev)openEventDialog(ev);}
+  if (d.cancel) {const ev=events.find(e=>e.id===d.cancel);if(ev&&(ev.organizerId===currentUser.uid||isAdmin())&&confirm('このイベントを中止しますか？'))updateDoc(doc(db,'events',ev.id),{status:'cancelled',updatedAt:serverTimestamp()}).catch(err=>alert(errorText(err)));}
+  if (d.share) {const ev=events.find(e=>e.id===d.share);if(ev)share(ev);}
+  if (d.day) {const daily=events.filter(e=>e.date===d.day).sort((a,b)=>a.time.localeCompare(b.time));$('#dayEvents').innerHTML=`<h3>${dateJP(d.day)}のイベント</h3>`+(daily.length?daily.map(displayEvent).join(''):'<div class="muted">この日のイベントはありません。</div>');}
+}
+document.addEventListener('click',attachClick);
+
 </script></body></html>
