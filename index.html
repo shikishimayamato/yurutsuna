@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#526b41"><title>ゆるつな香川｜会員専用アプリ v2.5</title>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#526b41"><title>ゆるつな香川｜会員専用アプリ v2.6</title>
 <style>
 :root{font-family:system-ui,-apple-system,'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif;background:#f2f7f5;color:#18352e;font-size:15px}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.55}a{color:#176f66}.app{max-width:1000px;margin:auto;padding:0 16px 96px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:19px 0 16px}.brand{display:flex;align-items:center;gap:11px}.logo{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:#168a7c;color:white;font-size:23px}h1{font-size:20px;margin:0}h2{font-size:18px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}p{line-height:1.65}.muted{color:#617c72;font-size:13px}.badge{display:inline-block;border-radius:99px;padding:5px 9px;background:#e4f2ec;color:#176c61;font-size:12px;font-weight:700}.btn{border:0;border-radius:11px;background:#148777;color:white;font-weight:700;padding:11px 15px}.btn.light{background:#e5f1ed;color:#176f66}.btn.outline{border:1px solid #bdd9ce;background:white;color:#176f66}.btn.danger{background:#fce8e6;color:#ad3530}.btn.small{padding:7px 10px;font-size:13px}.panel{background:#fff;border:1px solid #dfebe6;border-radius:17px;padding:19px;margin:0 0 17px;box-shadow:0 3px 15px #15433508}.intro{background:linear-gradient(125deg,#126f6a,#43aa8c);color:white;border-radius:19px;padding:24px;margin-bottom:18px}.intro h2{font-size:24px}.intro p{margin:7px 0 0;color:#eafbf4}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.stack{display:grid;gap:13px}.grid{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.field{display:grid;gap:6px}label{font-size:13px;font-weight:700}.field input,.field textarea,.field select,.filter{border:1px solid #bbd2c8;border-radius:10px;padding:11px;width:100%;background:white;color:#173a31}.field textarea{min-height:85px;resize:vertical}small{color:#62776f}.notice{border:1px solid #dfd3ad;background:#fffae9;border-radius:10px;padding:11px;font-size:13px}.err{color:#b52e2e;font-size:13px;white-space:pre-wrap}.empty{padding:30px;text-align:center;color:#637a72;border:1px dashed #b9d4cb;border-radius:13px}.nav{display:flex;gap:7px;flex-wrap:wrap;padding-bottom:17px}.nav button{border:1px solid #d1e5db;border-radius:11px;background:white;color:#28665b;font-weight:700;padding:9px 14px}.nav button.active{background:#187e74;border-color:#187e74;color:white}.event{padding:17px}.event h3{margin:5px 0 9px}.details{color:#566e65;font-size:13px;line-height:1.7}.event p{white-space:pre-wrap;margin:9px 0}.counts{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0}.counts span{background:#eff7f1;border-radius:9px;padding:6px 9px;font-size:12px}.answers{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 5px}.answers button{border:1px solid #c6ddd2;background:white;color:#1d5f53;border-radius:10px;padding:8px 12px}.answers button.selected{background:#147e72;color:white;border-color:#147e72}.names{font-size:12px;color:#648078}.calendarHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.week>div{text-align:center;font-size:12px;color:#71857e;padding:8px 0}.day{border:1px solid #e3ede8;background:white;min-height:66px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:7px 1px;cursor:pointer}.day.muted{opacity:.34}.dot{border-radius:99px;width:6px;height:6px;background:#139b82}.count{font-size:10px;color:#188378}.hide{display:none!important}.overlay{position:fixed;inset:0;background:#172a2485;display:grid;place-items:center;padding:15px;z-index:20}.dialog{background:white;border-radius:17px;width:min(560px,100%);max-height:92vh;overflow:auto;padding:18px}.dialog-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}.dialog-header h2{margin:0}.footer{font-size:12px;text-align:center;color:#668076;padding:16px}.pill{border-radius:99px;padding:7px 11px;background:#e6f2ed;font-size:12px;color:#22695f}.loading{background:#fff;border-radius:10px;padding:14px;margin:0 0 16px}.delete-x{border:1px solid #e7b7b4;background:#fff6f5;color:#a52d2d;width:34px;height:34px;flex:0 0 34px;border-radius:50%;font-size:22px;font-weight:700;line-height:1;display:inline-flex;align-items:center;justify-content:center}.delete-x:focus-visible{outline:3px solid #a52d2d;outline-offset:2px}.delete-x:hover{background:#ffe5e2}.delete-x:disabled{opacity:.45}.past-label{font-size:12px;color:#63756d}@media(max-width:600px){.app{padding-inline:11px}.intro{padding:18px}.panel{padding:15px}.day{min-height:54px}.event{padding:14px}}
 .member-row{display:grid;gap:9px;padding:14px;border:1px solid #e1e9e5;border-radius:13px;background:#fcfffd}.member-row .name{font-size:16px;font-weight:700}.member-meta{font-size:12px;color:#5c746a}.flag{display:inline-block;padding:4px 8px;border-radius:8px;background:#e5f0ec;font-size:12px}.flag.suspended{color:#8d6000;background:#fff0d1}.flag.removed{color:#a33636;background:#ffe8e8}.flag.admin{color:#175d84;background:#e7f2fd}.audit-row{padding:10px;border-bottom:1px solid #e8efeb;font-size:13px;line-height:1.6}.audit-row:last-child{border-bottom:0}.audit-reason{white-space:pre-wrap;color:#5a6e66}.toast{position:fixed;right:16px;bottom:16px;background:#183c34;color:white;padding:12px 15px;border-radius:10px;z-index:40;max-width:400px;box-shadow:0 4px 18px #0003}.member-actions{display:flex;gap:6px;flex-wrap:wrap}.pendingHelp{background:#f2faf6;border:1px solid #b5d9c7;padding:12px;border-radius:12px}.subtleLink{border:0;background:none;color:#136e62;text-decoration:underline;padding:7px;cursor:pointer}.member-note{font-size:13px;white-space:pre-wrap;color:#526e64;line-height:1.6}.emailText{font-size:12px;color:#667c72;word-break:break-all}
@@ -44,6 +44,14 @@ a,.subtleLink{color:#506e3a}
 .member-row{border-color:#e1e9d8;background:#fcfdf9}
 .loading{color:#42583e}
 @media(max-width:600px){.logo{width:52px;height:52px;border-radius:14px}.top .brand{gap:10px}.top .brand h1{font-size:19px}.intro::after{right:-90px;top:-35px;width:220px;height:220px}}
+
+/* LINEは認証専用。メールログインや従来の機能は残しています。 */
+.btn.line {background:#06c755;color:#062d16;box-shadow:0 3px 9px #063b1415}
+.btn.line:hover {background:#05b94d}
+.line-cta {padding:14px;border-radius:14px;background:#effbf2;border:1px solid #b5e9c6;display:grid;gap:8px}
+.line-cta p {margin:0}
+.auth-separator {display:flex;align-items:center;gap:10px;color:#60776f;margin:12px 0;font-size:12px}
+.auth-separator:before,.auth-separator:after {content:'';height:1px;background:#d9e5de;flex:1}
 </style><link rel="manifest" href="./manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png?v=olive2">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=olive2">
@@ -53,7 +61,7 @@ a,.subtleLink{color:#506e3a}
 <meta name="mobile-web-app-capable" content="yes">
 </head><body>
 <div class="app">
-<header class="top"><div class="brand"><div class="logo"><img src="./icon-192.png?v=olive2" alt="オリーブの輪・ゆるつな香川のロゴ" width="45" height="45"></div><div><h1>ゆるつな香川</h1><div class="muted">香川県ゆるつな倶楽部・会員専用アプリ v2.5</div></div></div><div id="account" class="row"></div></header>
+<header class="top"><div class="brand"><div class="logo"><img src="./icon-192.png?v=olive2" alt="オリーブの輪・ゆるつな香川のロゴ" width="45" height="45"></div><div><h1>ゆるつな香川</h1><div class="muted">香川県ゆるつな倶楽部・会員専用アプリ v2.6</div></div></div><div id="account" class="row"></div></header>
 
 <div id="updateBanner" class="update-banner hide" role="status"><span>新しいバージョンがあります。入力内容を保存してから更新してください。</span><button type="button" class="btn small" id="applyPwaUpdate">更新する</button></div>
 <details id="pwaInstallHelp" class="install-tip"><summary>📱 スマホのホーム画面にアプリを追加する方法</summary>
@@ -64,17 +72,26 @@ a,.subtleLink{color:#506e3a}
 </details>
 <div id="status" class="loading">アプリを準備しています…</div>
 <div id="setup" class="panel hide"><h2>初期設定が必要です</h2><p>Firebaseへの接続情報がまだ登録されていません。管理者が <code>index.html</code> 内の <code>firebaseConfig</code> を設定してからGitHub Pagesにアップロードしてください。</p><p class="muted">設定方法は同梱の「はじめにお読みください.txt」を参照してください。</p></div>
-<div id="login" class="panel hide"><h2>会員ログイン</h2><p class="muted">登録済みのメールアドレスとパスワードでログインしてください。</p><form id="loginForm" class="stack"><div class="field"><label for="email">メールアドレス</label><input id="email" type="email" autocomplete="username" required></div><div class="field"><label for="password">パスワード</label><input id="password" type="password" autocomplete="current-password" required></div><button class="btn" type="submit">ログインする</button><div id="loginErr" class="err" role="alert"></div></form><div class="row" style="margin-top:14px"><button type="button" id="showSignup" class="btn outline">初めての方：入会申請</button><button type="button" id="resetPassword" class="subtleLink">パスワードを忘れた方</button></div></div>
+<div id="login" class="panel hide"><h2>会員ログイン</h2>
+<div class="line-cta"><button type="button" id="lineLoginButton" class="btn line">LINEでログイン・入会申請</button>
+<p class="muted">新しいパスワードは不要です。初めての方は、LINEでの本人認証後にLINEグループ名で入会申請してください。管理者の承認後に利用できます。</p>
+<p class="notice"><strong>すでにメールで登録した方：</strong>先に下のメールログインを使い、マイページの「LINEと連携」を行ってください。既存の参加履歴を引き継げます。</p>
+<p id="lineLoginErr" class="err" role="alert"></p></div><div class="auth-separator">または従来の方法</div>
+<p class="muted">登録済みのメールアドレスとパスワードでもログインできます。</p><form id="loginForm" class="stack"><div class="field"><label for="email">メールアドレス</label><input id="email" type="email" autocomplete="username" required></div><div class="field"><label for="password">パスワード</label><input id="password" type="password" autocomplete="current-password" required></div><button class="btn" type="submit">ログインする</button><div id="loginErr" class="err" role="alert"></div></form><div class="row" style="margin-top:14px"><button type="button" id="showSignup" class="btn outline">初めての方：入会申請</button><button type="button" id="resetPassword" class="subtleLink">パスワードを忘れた方</button></div></div>
 <div id="signup" class="panel hide"><h2>新規入会申請</h2><p class="muted">香川県ゆるつな倶楽部のLINEグループ参加者向けです。申請後、管理者がLINE上の所属を確認し、承認すると利用を開始できます。</p><form id="signupForm" class="stack"><div class="field"><label for="signupName">LINEグループで使用している表示名 *</label><input id="signupName" minlength="1" maxlength="40" autocomplete="nickname" required placeholder="例：うっちー"></div><div class="field"><label for="signupEmail">メールアドレス *</label><input id="signupEmail" type="email" autocomplete="email" required></div><div class="field"><label for="signupPassword">パスワード（6文字以上）*</label><input id="signupPassword" type="password" minlength="6" autocomplete="new-password" required></div><div class="field"><label for="signupPasswordConfirm">パスワード（確認）*</label><input id="signupPasswordConfirm" type="password" minlength="6" autocomplete="new-password" required></div><div class="field"><label for="signupNote">運営者へのメッセージ（任意・200文字以内）</label><textarea id="signupNote" maxlength="200" placeholder="LINE上で運営者がご本人を確認できる情報など"></textarea></div><p class="notice">本アプリはLINEグループとは自動連携していません。管理者がLINEグループの参加状況を確認してから承認します。パスワードは運営者に伝えないでください。</p><button class="btn" id="submitSignup" type="submit">登録して入会を申請する</button><div id="signupErr" class="err" role="alert"></div></form><button id="backToLogin" class="subtleLink">ログイン画面へ戻る</button></div>
 <div id="pending" class="panel hide"><h2>入会申請を受け付けました</h2><p>管理者による確認・承認をお待ちください。</p><p id="pendingInfo" class="pendingHelp"></p><p class="muted">LINEグループへの参加状況を管理者が確認します。承認後、この画面を再読み込みするとイベントが利用できます。自動通知メールは現段階では送信されません。</p><button class="btn light" id="logoutPending">ログアウト</button></div>
 <div id="accessBlocked" class="panel hide"><h2 id="blockedTitle">利用を確認できません</h2><p id="blockedDescription"></p><p class="muted">お心当たりがない場合は、運営者に直接お問い合わせください。</p><button class="btn light" id="logoutBlocked">ログアウト</button></div>
-<div id="notMember" class="panel hide"><h2>入会申請が未登録です</h2><p>ログインはできていますが、会員名簿に申請情報がありません。申請途中に通信が切れた場合などは、この画面から登録できます。</p><form id="applyForm" class="stack"><div class="field"><label for="applyName">LINEグループの表示名</label><input id="applyName" minlength="1" maxlength="40" required></div><div class="field"><label for="applyNote">運営者へのメッセージ（任意）</label><textarea id="applyNote" maxlength="200"></textarea></div><button class="btn" id="applySubmit" type="submit">入会申請を登録する</button><p id="applyErr" class="err" role="alert"></p></form><button class="btn light" id="logoutWaiting" style="margin-top:12px">ログアウト</button></div>
+<div id="notMember" class="panel hide"><h2>入会申請が未登録です</h2><p>初めてLINEでログインした方は、この画面で入会申請をしてください。すでにメールで登録済みなのにこの画面になった方は、申請せずにログアウトしてメールでログインし、マイページからLINE連携してください。</p><form id="applyForm" class="stack"><div class="field"><label for="applyName">LINEグループの表示名</label><input id="applyName" minlength="1" maxlength="40" required></div><div class="field"><label for="applyNote">運営者へのメッセージ（任意）</label><textarea id="applyNote" maxlength="200"></textarea></div><button class="btn" id="applySubmit" type="submit">入会申請を登録する</button><p id="applyErr" class="err" role="alert"></p></form><button class="btn light" id="logoutWaiting" style="margin-top:12px">ログアウト</button></div>
 <div id="main" class="hide"><div class="intro"><span class="badge">会員なら誰でも企画OK</span><h2>みんなで、次の楽しい予定を。</h2><p>イベントを提案したり、参加表明したり。新しいイベントは会員全員の画面に反映されます。</p></div>
 <nav class="nav"><button data-tab="events" class="active">🎉 イベント</button><button data-tab="calendar">🗓 カレンダー</button><button data-tab="profile">👤 マイページ</button><button data-tab="admin" id="adminTab" class="hide">🛡 会員管理</button></nav>
 <section id="eventsPage"><div class="row" style="margin:6px 0 16px"><div><h2>イベント一覧</h2><div id="eventTotal" class="muted"></div></div><button id="newEvent" class="btn">＋ イベントを企画する</button></div>
 <div class="panel row"><div style="flex:1;min-width:170px"><label for="areaFilter">地域を選ぶ</label><select class="filter" id="areaFilter"><option value="">すべての地域</option><option>高松</option><option>東讃</option><option>中讃</option><option>西讃</option><option>島しょ部</option><option>その他</option></select></div><div style="flex:2;min-width:190px"><label for="keyword">キーワード</label><input class="filter" id="keyword" placeholder="例：カラオケ、島めぐり"></div></div><div id="eventsList" class="stack"></div></section>
 <section id="calendarPage" class="hide"><div class="panel"><div class="calendarHead"><button class="btn outline small" id="prevMonth">‹ 前月</button><h2 id="monthName"></h2><button class="btn outline small" id="nextMonth">次月 ›</button></div><div class="week" id="calDays"></div><div id="dayEvents" style="margin-top:14px"></div></div></section>
-<section id="profilePage" class="hide"><div class="panel"><h2>マイページ</h2><p><strong id="profileName"></strong></p><p class="muted" id="profileEmail"></p><p>参加者のお名前と会員権限は、運営の管理画面で登録した内容を使用しています。</p><p class="notice">会員情報保護のため、イベントのタイトルや説明に住所、電話番号、病歴などの個人情報を入力しないでください。</p></div></section>
+<section id="profilePage" class="hide"><div class="panel"><h2>マイページ</h2><p><strong id="profileName"></strong></p><p class="muted" id="profileEmail"></p>
+<div class="line-cta"><strong>LINEログイン連携</strong><p class="muted" id="lineLinkStatus">連携状態を確認しています…</p>
+<button id="linkLineButton" class="btn line" type="button">この会員アカウントにLINEを連携する</button>
+<p class="muted">連携すると、イベントや参加履歴はそのままで、次回からLINEでログインできます。本人のLINEアカウントで認証してください。</p>
+<p id="lineLinkErr" class="err" role="alert"></p></div><p>参加者のお名前と会員権限は、運営の管理画面で登録した内容を使用しています。</p><p class="notice">会員情報保護のため、イベントのタイトルや説明に住所、電話番号、病歴などの個人情報を入力しないでください。</p></div></section>
 <section id="adminPage" class="hide">
   <div class="row"><div><h2>会員管理</h2><p class="muted">管理者専用。一般会員の利用停止・解除・退会を管理します。</p></div></div>
   <div class="panel">
@@ -88,7 +105,7 @@ a,.subtleLink{color:#506e3a}
   <div class="panel"><div class="row"><h2>管理操作の履歴</h2><span class="muted">直近50件</span></div><div id="auditList" class="stack"></div></div>
 </section>
 </div>
-<footer class="footer">ゆるつな香川｜会員専用イベント管理アプリ v2.5</footer>
+<footer class="footer">ゆるつな香川｜会員専用イベント管理アプリ v2.6</footer>
 </div>
 <div id="eventOverlay" class="overlay hide"><div class="dialog"><div class="dialog-header"><h2 id="dialogTitle">イベントを企画する</h2><button class="btn light small" id="closeEvent">閉じる ✕</button></div><form id="eventForm" class="stack"><input id="eventId" type="hidden"><div class="field"><label for="title">イベント名 *</label><input id="title" required maxlength="90" placeholder="例：高松カラオケ会"></div><div class="grid"><div class="field"><label for="eventDate">開催日 *</label><input id="eventDate" type="date" required></div><div class="field"><label for="eventTime">開始時刻 *</label><input id="eventTime" type="time" required value="14:00"></div></div><div class="grid"><div class="field"><label for="area">地域 *</label><select id="area" required><option>高松</option><option>東讃</option><option>中讃</option><option>西讃</option><option>島しょ部</option><option>その他</option></select></div><div class="field"><label for="place">会場・集合場所 *</label><input id="place" required maxlength="120"></div></div><div class="grid"><div class="field"><label for="minimum">最低催行人数</label><input id="minimum" type="number" min="1" max="100" value="3" required></div><div class="field"><label for="capacity">定員（0なら無制限）</label><input id="capacity" type="number" min="0" max="200" value="0" required></div></div><div class="field"><label for="details">内容・参加費・注意事項</label><textarea id="details" maxlength="1200" placeholder="途中参加可、参加費は各自負担など"></textarea></div><p class="err" id="saveErr"></p><button class="btn" id="submitEvent" type="submit">イベントを保存する</button></form></div></div>
 <div id="manageOverlay" class="overlay hide" role="dialog" aria-modal="true" aria-labelledby="manageTitle">
@@ -106,7 +123,7 @@ a,.subtleLink{color:#506e3a}
 </div>
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut, OAuthProvider, signInWithPopup, linkWithPopup } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js';
 import {
   getFirestore, collection, doc, getDoc, getDocFromServer, getDocsFromServer, addDoc, setDoc, updateDoc, deleteDoc, where,
   onSnapshot, serverTimestamp, writeBatch, query, orderBy, limit
@@ -205,7 +222,8 @@ function showActiveApp() {
   show('#main', true); show('#notMember', false); show('#accessBlocked', false); show('#pending', false); show('#status', false);
   show('#adminTab', isAdmin());
   $('#profileName').textContent = member.displayName || '会員';
-  $('#profileEmail').textContent = currentUser.email || '';
+  $('#profileEmail').textContent = currentUser.email || 'LINEでログイン中（メールアドレス登録なし）';
+  renderLineLink();
   $('#account').innerHTML = `<span class="pill">${esc(member.displayName || '会員')}</span><button id="logout" class="btn outline small">ログアウト</button>`;
   $('#logout').addEventListener('click', () => signOut(auth));
   subscribeActiveData();
@@ -248,6 +266,49 @@ try {
   });
 } catch (err) { message('Firebase初期化に失敗しました：' + errorText(err)); }
 
+// LINE OIDC はFirebaseが処理し、シークレットをブラウザーへ配置しません。
+// PWAやLINE内ブラウザーではポップアップが制限されることがあるため、失敗時は既存ログインに戻れます。
+function makeLineProvider() {
+  const provider = new OAuthProvider('oidc.line');
+  provider.addScope('openid');
+  provider.addScope('profile');
+  return provider;
+}
+function hasLinkedLine() {
+  return !!auth?.currentUser?.providerData?.some(item => item.providerId === 'oidc.line');
+}
+function renderLineLink() {
+  const linked = hasLinkedLine();
+  $('#lineLinkStatus').textContent = linked ? '✅ この会員アカウントはLINEと連携済みです。' : 'まだLINEとは連携していません。';
+  show('#linkLineButton', !linked);
+}
+$('#lineLoginButton').addEventListener('click', async () => {
+  const button = $('#lineLoginButton');
+  $('#lineLoginErr').textContent = '';
+  button.disabled = true;
+  try {
+    if (auth.currentUser) throw new Error('すでにログインしています。');
+    await signInWithPopup(auth, makeLineProvider());
+    // 会員データの取得・申請画面への遷移は、既存のonAuthStateChangedに任せる。
+  } catch (err) { $('#lineLoginErr').textContent = authError(err); }
+  finally { button.disabled = false; }
+});
+$('#linkLineButton').addEventListener('click', async () => {
+  const button = $('#linkLineButton');
+  $('#lineLinkErr').textContent = '';
+  if (!auth.currentUser || !member || member.status !== 'active') return;
+  if (hasLinkedLine()) { renderLineLink(); return; }
+  if (!confirm('現在の会員アカウントに、ご自身のLINEアカウントを連携しますか？\nイベントと参加履歴を引き継ぎます。')) return;
+  button.disabled = true;
+  try {
+    const originalUid = auth.currentUser.uid;
+    const result = await linkWithPopup(auth.currentUser, makeLineProvider());
+    if (result.user.uid !== originalUid) throw new Error('元の会員アカウントと一致しません。運営者に連絡してください。');
+    renderLineLink();
+    toast('LINE連携が完了しました。次回からLINEでログインできます。');
+  } catch (err) { $('#lineLinkErr').textContent = authError(err); }
+  finally { button.disabled = false; }
+});
 $('#loginForm').addEventListener('submit', async event => {
   event.preventDefault(); $('#loginErr').textContent = '';
   const btn = event.target.querySelector('button'); btn.disabled = true;
@@ -266,6 +327,12 @@ function authError(err) {
   if (err?.code === 'auth/too-many-requests') return '試行回数が多いため、一時的に制限されています。時間をおいてください。';
   if (err?.code === 'auth/invalid-email') return 'メールアドレスを確認してください。';
   if (err?.code === 'permission-denied') return '会員申請の保存が拒否されました。Firestoreルールがv2.2に更新されているか確認してください。';
+  if (err?.code === 'auth/popup-blocked' || err?.code === 'auth/operation-not-supported-in-this-environment') return 'LINE認証画面を開けませんでした。LINE内ブラウザーではなくSafariまたはChromeで開き、再度お試しください。';
+  if (err?.code === 'auth/popup-closed-by-user') return 'LINE認証画面を閉じたため、処理を取り消しました。';
+  if (err?.code === 'auth/credential-already-in-use' || err?.code === 'auth/provider-already-linked') return 'このLINEアカウントは別の会員アカウントと連携済みです。自動統合はできません。運営者にご相談ください。';
+  if (err?.code === 'auth/account-exists-with-different-credential') return 'ほかのログイン方法で登録済みの可能性があります。メールでログインしてから、マイページでLINEを連携してください。';
+  if (err?.code === 'auth/unauthorized-domain') return '認証用ドメインが未登録です。運営者にお知らせください。';
+  if (err?.code === 'auth/operation-not-allowed') return 'LINE認証の準備が完了していません。運営者にお知らせください。';
   return errorText(err);
 }
 async function submitApplication(name, note) {
@@ -274,7 +341,7 @@ async function submitApplication(name, note) {
   const displayName = name.trim(), applicationNote = note.trim();
   if (!displayName || displayName.length > 40 || applicationNote.length > 200) throw new Error('表示名は1〜40文字、メッセージは200文字以内です。');
   await setDoc(doc(db, 'members', signedUser.uid), {
-    displayName, role:'member', status:'pending', email:signedUser.email,
+    displayName, role:'member', status:'pending', email:signedUser.email || '',
     applicationNote, requestedAt:serverTimestamp()
   });
 }
