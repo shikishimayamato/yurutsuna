@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#526b41"><title>ゆるつな香川｜会員専用アプリ v2.6</title>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#526b41"><title>ゆるつな香川｜会員専用アプリ v2.7</title>
 <style>
 :root{font-family:system-ui,-apple-system,'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif;background:#f2f7f5;color:#18352e;font-size:15px}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.55}a{color:#176f66}.app{max-width:1000px;margin:auto;padding:0 16px 96px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:19px 0 16px}.brand{display:flex;align-items:center;gap:11px}.logo{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:#168a7c;color:white;font-size:23px}h1{font-size:20px;margin:0}h2{font-size:18px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}p{line-height:1.65}.muted{color:#617c72;font-size:13px}.badge{display:inline-block;border-radius:99px;padding:5px 9px;background:#e4f2ec;color:#176c61;font-size:12px;font-weight:700}.btn{border:0;border-radius:11px;background:#148777;color:white;font-weight:700;padding:11px 15px}.btn.light{background:#e5f1ed;color:#176f66}.btn.outline{border:1px solid #bdd9ce;background:white;color:#176f66}.btn.danger{background:#fce8e6;color:#ad3530}.btn.small{padding:7px 10px;font-size:13px}.panel{background:#fff;border:1px solid #dfebe6;border-radius:17px;padding:19px;margin:0 0 17px;box-shadow:0 3px 15px #15433508}.intro{background:linear-gradient(125deg,#126f6a,#43aa8c);color:white;border-radius:19px;padding:24px;margin-bottom:18px}.intro h2{font-size:24px}.intro p{margin:7px 0 0;color:#eafbf4}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.stack{display:grid;gap:13px}.grid{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.field{display:grid;gap:6px}label{font-size:13px;font-weight:700}.field input,.field textarea,.field select,.filter{border:1px solid #bbd2c8;border-radius:10px;padding:11px;width:100%;background:white;color:#173a31}.field textarea{min-height:85px;resize:vertical}small{color:#62776f}.notice{border:1px solid #dfd3ad;background:#fffae9;border-radius:10px;padding:11px;font-size:13px}.err{color:#b52e2e;font-size:13px;white-space:pre-wrap}.empty{padding:30px;text-align:center;color:#637a72;border:1px dashed #b9d4cb;border-radius:13px}.nav{display:flex;gap:7px;flex-wrap:wrap;padding-bottom:17px}.nav button{border:1px solid #d1e5db;border-radius:11px;background:white;color:#28665b;font-weight:700;padding:9px 14px}.nav button.active{background:#187e74;border-color:#187e74;color:white}.event{padding:17px}.event h3{margin:5px 0 9px}.details{color:#566e65;font-size:13px;line-height:1.7}.event p{white-space:pre-wrap;margin:9px 0}.counts{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0}.counts span{background:#eff7f1;border-radius:9px;padding:6px 9px;font-size:12px}.answers{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 5px}.answers button{border:1px solid #c6ddd2;background:white;color:#1d5f53;border-radius:10px;padding:8px 12px}.answers button.selected{background:#147e72;color:white;border-color:#147e72}.names{font-size:12px;color:#648078}.calendarHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.week>div{text-align:center;font-size:12px;color:#71857e;padding:8px 0}.day{border:1px solid #e3ede8;background:white;min-height:66px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:7px 1px;cursor:pointer}.day.muted{opacity:.34}.dot{border-radius:99px;width:6px;height:6px;background:#139b82}.count{font-size:10px;color:#188378}.hide{display:none!important}.overlay{position:fixed;inset:0;background:#172a2485;display:grid;place-items:center;padding:15px;z-index:20}.dialog{background:white;border-radius:17px;width:min(560px,100%);max-height:92vh;overflow:auto;padding:18px}.dialog-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}.dialog-header h2{margin:0}.footer{font-size:12px;text-align:center;color:#668076;padding:16px}.pill{border-radius:99px;padding:7px 11px;background:#e6f2ed;font-size:12px;color:#22695f}.loading{background:#fff;border-radius:10px;padding:14px;margin:0 0 16px}.delete-x{border:1px solid #e7b7b4;background:#fff6f5;color:#a52d2d;width:34px;height:34px;flex:0 0 34px;border-radius:50%;font-size:22px;font-weight:700;line-height:1;display:inline-flex;align-items:center;justify-content:center}.delete-x:focus-visible{outline:3px solid #a52d2d;outline-offset:2px}.delete-x:hover{background:#ffe5e2}.delete-x:disabled{opacity:.45}.past-label{font-size:12px;color:#63756d}@media(max-width:600px){.app{padding-inline:11px}.intro{padding:18px}.panel{padding:15px}.day{min-height:54px}.event{padding:14px}}
 .member-row{display:grid;gap:9px;padding:14px;border:1px solid #e1e9e5;border-radius:13px;background:#fcfffd}.member-row .name{font-size:16px;font-weight:700}.member-meta{font-size:12px;color:#5c746a}.flag{display:inline-block;padding:4px 8px;border-radius:8px;background:#e5f0ec;font-size:12px}.flag.suspended{color:#8d6000;background:#fff0d1}.flag.removed{color:#a33636;background:#ffe8e8}.flag.admin{color:#175d84;background:#e7f2fd}.audit-row{padding:10px;border-bottom:1px solid #e8efeb;font-size:13px;line-height:1.6}.audit-row:last-child{border-bottom:0}.audit-reason{white-space:pre-wrap;color:#5a6e66}.toast{position:fixed;right:16px;bottom:16px;background:#183c34;color:white;padding:12px 15px;border-radius:10px;z-index:40;max-width:400px;box-shadow:0 4px 18px #0003}.member-actions{display:flex;gap:6px;flex-wrap:wrap}.pendingHelp{background:#f2faf6;border:1px solid #b5d9c7;padding:12px;border-radius:12px}.subtleLink{border:0;background:none;color:#136e62;text-decoration:underline;padding:7px;cursor:pointer}.member-note{font-size:13px;white-space:pre-wrap;color:#526e64;line-height:1.6}.emailText{font-size:12px;color:#667c72;word-break:break-all}
@@ -52,6 +52,25 @@ a,.subtleLink{color:#506e3a}
 .line-cta p {margin:0}
 .auth-separator {display:flex;align-items:center;gap:10px;color:#60776f;margin:12px 0;font-size:12px}
 .auth-separator:before,.auth-separator:after {content:'';height:1px;background:#d9e5de;flex:1}
+
+/* v2.7: スマホへの追加案内。スクロールしなくても気づく位置と文字サイズ。 */
+.pwa-install-card{margin:1px 0 17px;padding:18px 16px 15px;border-radius:18px;border:2px solid #62834e;background:linear-gradient(145deg,#eef7e7 0%,#fffdf0 100%);box-shadow:0 5px 19px #2e482c1c;color:#2e4a2b}
+.pwa-install-top{display:flex;align-items:center;gap:13px}
+.pwa-install-logo{flex-shrink:0;display:block;border-radius:15px;background:white;object-fit:contain;border:1px solid #dae6d2}
+.pwa-install-title{min-width:0}
+.pwa-install-title strong{font-size:19px;line-height:1.45;display:block;color:#334c27}
+.pwa-install-title p{font-size:14px;line-height:1.55;margin:5px 0 0;color:#4e603d}
+.pwa-install-primary{display:block;width:100%;margin:16px 0 7px;padding:15px 12px;min-height:54px;font-weight:800;font-size:17px;background:#476f32;border-radius:12px}
+.pwa-install-one-line{font-size:13px;line-height:1.55;margin:7px 0;color:#57654b}
+.pwa-install-steps{margin-top:14px;padding:13px 12px;border-radius:12px;background:#fff;border:1px solid #d7e5c9}
+.pwa-install-steps strong{display:block;font-size:16px;margin-bottom:6px}
+.pwa-install-steps ol{margin:4px 0 10px;padding-left:24px;font-size:15px;line-height:1.9}
+.pwa-install-extra{font-size:13px;line-height:1.6;margin:4px 0 10px;color:#596650}
+.pwa-install-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:9px;font-size:12px;color:#607052}
+.pwa-install-later{border:0;background:transparent;color:#526d44;text-decoration:underline;padding:8px;white-space:nowrap}
+@media(min-width:768px){.pwa-install-card{display:none!important}}
+@media(display-mode:standalone),(display-mode:fullscreen){.pwa-install-card{display:none!important}}
+@media(max-width:360px){.pwa-install-title strong{font-size:17px}.pwa-install-logo{width:52px;height:52px}.pwa-install-primary{font-size:16px}}
 </style><link rel="manifest" href="./manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png?v=olive2">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=olive2">
@@ -61,15 +80,25 @@ a,.subtleLink{color:#506e3a}
 <meta name="mobile-web-app-capable" content="yes">
 </head><body>
 <div class="app">
-<header class="top"><div class="brand"><div class="logo"><img src="./icon-192.png?v=olive2" alt="オリーブの輪・ゆるつな香川のロゴ" width="45" height="45"></div><div><h1>ゆるつな香川</h1><div class="muted">香川県ゆるつな倶楽部・会員専用アプリ v2.6</div></div></div><div id="account" class="row"></div></header>
+<header class="top"><div class="brand"><div class="logo"><img src="./icon-192.png?v=olive2" alt="オリーブの輪・ゆるつな香川のロゴ" width="45" height="45"></div><div><h1>ゆるつな香川</h1><div class="muted">香川県ゆるつな倶楽部・会員専用アプリ v2.7</div></div></div><div id="account" class="row"></div></header>
 
 <div id="updateBanner" class="update-banner hide" role="status"><span>新しいバージョンがあります。入力内容を保存してから更新してください。</span><button type="button" class="btn small" id="applyPwaUpdate">更新する</button></div>
-<details id="pwaInstallHelp" class="install-tip"><summary>📱 スマホのホーム画面にアプリを追加する方法</summary>
-<p><strong>iPhone：</strong>Safariでこのページを開く → 共有（□↑）→ 「ホーム画面に追加」→「追加」。</p>
-<p><strong>Android：</strong>Chromeでこのページを開く → 右上の「︙」→ 「アプリをインストール」または「ホーム画面に追加」。</p>
-<p>インストール後も現在のアカウントでログインして使います。インターネット接続が必要です。</p>
-<div class="install-actions"><button type="button" class="btn small hide" id="installPwaBtn">この端末にインストール</button><span class="muted">App Store・Google Playは不要です。</span></div>
-</details>
+<!-- v2.7: スマホのブラウザーでだけ大きく表示。ホーム画面アイコンからの起動時には隠す -->
+<section id="pwaInstallCard" class="pwa-install-card hide" aria-label="スマートフォンのホーム画面への追加案内">
+  <div class="pwa-install-top">
+    <img class="pwa-install-logo" src="./icon-192.png" width="64" height="64" alt="ゆるつな香川・オリーブの輪">
+    <div class="pwa-install-title"><strong>📱 ホーム画面に追加！</strong><p>次からは、このオリーブの輪を押すだけで開けます。</p></div>
+  </div>
+  <button id="pwaInstallPrimary" class="btn pwa-install-primary" type="button">ホーム画面に追加する方法を見る</button>
+  <p id="pwaInstallSimple" class="pwa-install-one-line">追加すると、LINEのトークからURLを探す手間がなくなります。</p>
+  <div id="pwaInstallSteps" class="pwa-install-steps hide" aria-live="polite">
+    <strong id="pwaInstallStepsTitle">ホーム画面に追加する手順</strong>
+    <ol id="pwaInstallStepsList"></ol>
+    <p id="pwaInstallExtra" class="pwa-install-extra"></p>
+    <button type="button" id="pwaInstallDone" class="btn light small">わかりました（閉じる）</button>
+  </div>
+  <div class="pwa-install-foot"><span>無料・登録済みの会員情報はそのまま</span><button id="pwaInstallLater" type="button" class="pwa-install-later">あとで</button></div>
+</section>
 <div id="status" class="loading">アプリを準備しています…</div>
 <div id="setup" class="panel hide"><h2>初期設定が必要です</h2><p>Firebaseへの接続情報がまだ登録されていません。管理者が <code>index.html</code> 内の <code>firebaseConfig</code> を設定してからGitHub Pagesにアップロードしてください。</p><p class="muted">設定方法は同梱の「はじめにお読みください.txt」を参照してください。</p></div>
 <div id="login" class="panel hide"><h2>会員ログイン</h2>
@@ -105,7 +134,7 @@ a,.subtleLink{color:#506e3a}
   <div class="panel"><div class="row"><h2>管理操作の履歴</h2><span class="muted">直近50件</span></div><div id="auditList" class="stack"></div></div>
 </section>
 </div>
-<footer class="footer">ゆるつな香川｜会員専用イベント管理アプリ v2.6</footer>
+<footer class="footer">ゆるつな香川｜会員専用イベント管理アプリ v2.7</footer>
 </div>
 <div id="eventOverlay" class="overlay hide"><div class="dialog"><div class="dialog-header"><h2 id="dialogTitle">イベントを企画する</h2><button class="btn light small" id="closeEvent">閉じる ✕</button></div><form id="eventForm" class="stack"><input id="eventId" type="hidden"><div class="field"><label for="title">イベント名 *</label><input id="title" required maxlength="90" placeholder="例：高松カラオケ会"></div><div class="grid"><div class="field"><label for="eventDate">開催日 *</label><input id="eventDate" type="date" required></div><div class="field"><label for="eventTime">開始時刻 *</label><input id="eventTime" type="time" required value="14:00"></div></div><div class="grid"><div class="field"><label for="area">地域 *</label><select id="area" required><option>高松</option><option>東讃</option><option>中讃</option><option>西讃</option><option>島しょ部</option><option>その他</option></select></div><div class="field"><label for="place">会場・集合場所 *</label><input id="place" required maxlength="120"></div></div><div class="grid"><div class="field"><label for="minimum">最低催行人数</label><input id="minimum" type="number" min="1" max="100" value="3" required></div><div class="field"><label for="capacity">定員（0なら無制限）</label><input id="capacity" type="number" min="0" max="200" value="0" required></div></div><div class="field"><label for="details">内容・参加費・注意事項</label><textarea id="details" maxlength="1200" placeholder="途中参加可、参加費は各自負担など"></textarea></div><p class="err" id="saveErr"></p><button class="btn" id="submitEvent" type="submit">イベントを保存する</button></form></div></div>
 <div id="manageOverlay" class="overlay hide" role="dialog" aria-modal="true" aria-labelledby="manageTitle">
@@ -621,38 +650,143 @@ document.addEventListener('click',attachClick);
 
 </script>
 <script>
-// v2.5: PWAのインストールと更新制御。Firebaseの個人データはキャッシュしません。
+// v2.7: ブラウザーでは大きな案内、追加したアプリからの起動時には非表示。
+// 個人情報や会員データはブラウザーのキャッシュへ保存しません。
 (function () {
   'use strict';
-  const standAlone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-  const help = document.getElementById('pwaInstallHelp');
-  if (standAlone && help) help.classList.add('hide');
-
+  const card = document.getElementById('pwaInstallCard');
+  const primary = document.getElementById('pwaInstallPrimary');
+  const stepsBox = document.getElementById('pwaInstallSteps');
+  const stepsTitle = document.getElementById('pwaInstallStepsTitle');
+  const stepsList = document.getElementById('pwaInstallStepsList');
+  const extra = document.getElementById('pwaInstallExtra');
+  const shortLine = document.getElementById('pwaInstallSimple');
+  const ua = navigator.userAgent || '';
+  const isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isAndroid = /Android/.test(ua);
+  const isLineBrowser = /Line\/|\bLine\b/i.test(ua);
+  const isMobile = isIOS || isAndroid || (navigator.userAgentData && navigator.userAgentData.mobile);
+  const standaloneQuery = window.matchMedia('(display-mode: standalone)');
+  const fullScreenQuery = window.matchMedia('(display-mode: fullscreen)');
+  const isAppMode = () => standaloneQuery.matches || fullScreenQuery.matches || navigator.standalone === true;
   let deferredInstallPrompt = null;
-  const installButton = document.getElementById('installPwaBtn');
-  window.addEventListener('beforeinstallprompt', event => {
-    event.preventDefault();
-    deferredInstallPrompt = event;
-    if (!standAlone) installButton.classList.remove('hide');
-  });
-  installButton.addEventListener('click', async () => {
-    if (!deferredInstallPrompt) return;
-    installButton.disabled = true;
+  let isHiddenForThisVisit = false;
+  const canonicalUrl = 'https://shikishimayamato.github.io/yurutsuna/';
+
+  function syncVisibility() {
+    card.classList.toggle('hide', !isMobile || isAppMode() || isHiddenForThisVisit);
+  }
+  function setGuide(title, items, hint) {
+    stepsTitle.textContent = title;
+    stepsList.replaceChildren();
+    for (const item of items) {
+      const li = document.createElement('li');
+      li.textContent = item;
+      stepsList.appendChild(li);
+    }
+    extra.textContent = hint;
+    stepsBox.classList.remove('hide');
+  }
+  async function copyAppUrl() {
     try {
-      await deferredInstallPrompt.prompt();
-      await deferredInstallPrompt.userChoice;
-    } catch (error) {
-      console.warn('インストールの案内を表示できませんでした', error);
-    } finally {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('clipboard unavailable');
+      await navigator.clipboard.writeText(canonicalUrl);
+      return true;
+    } catch (_) {
+      const input = document.createElement('textarea');
+      input.value = canonicalUrl;
+      input.setAttribute('readonly', '');
+      input.style.position = 'fixed';
+      input.style.opacity = '0';
+      document.body.appendChild(input);
+      input.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (_) {}
+      input.remove();
+      return ok;
+    }
+  }
+  function showInstructions() {
+    if (isLineBrowser) {
+      setGuide('LINEからブラウザーへ移動', [
+        '下のボタンでアプリのURLをコピーします。',
+        isIOS ? 'iPhoneの「Safari」を開きます。' : '「Chrome」または普段使うインターネットアプリを開きます。',
+        'アドレス欄を長押しし「貼り付け」→「開く」。',
+        isIOS ? 'Safariの共有ボタンから「ホーム画面に追加」。' : 'メニュー（︙など）から「ホーム画面に追加」。'
+      ], 'LINEの中で開いた画面では追加できない場合があります。');
+    } else if (isIOS) {
+      setGuide('iPhoneでの追加方法', [
+        'Safariで「ゆるつな香川」を開く。',
+        'Safariの「共有」（□から↑）→「ホーム画面に追加」。',
+        '「ウェブアプリとして開く」があればオンにして「追加」。'
+      ], '追加したオリーブの輪のアイコンから開くと、この案内は自動で消えます。');
+    } else if (isAndroid) {
+      setGuide('Androidでの追加方法', [
+        'Chrome、または普段使っているインターネットアプリで開く。',
+        '右上の「︙」などのメニューをタップ。',
+        '「アプリをインストール」または「ホーム画面に追加」を選ぶ。'
+      ], 'Chromeがなくても、Samsung Internetなど対応ブラウザーで追加できます。');
+    } else {
+      setGuide('ホーム画面への追加', ['ブラウザーのメニューから「ホーム画面に追加」を選びます。'], '操作は機種やブラウザーによって少し違います。');
+    }
+  }
+  if (isLineBrowser) {
+    primary.textContent = '📋 URLをコピーしてブラウザーで開く';
+    shortLine.textContent = 'LINEから開いた方はこちらを押してください。';
+  } else if (isIOS) {
+    primary.textContent = '🍎 iPhoneで追加する方法を見る';
+    shortLine.textContent = 'Safariの「共有」→「ホーム画面に追加」で使えます。';
+  } else if (isAndroid) {
+    primary.textContent = '📲 ホーム画面に追加する';
+    shortLine.textContent = 'Chromeなどのメニューから追加できます。';
+  }
+  primary.addEventListener('click', async () => {
+    if (isLineBrowser) {
+      const success = await copyAppUrl();
+      showInstructions();
+      primary.textContent = success ? '✓ URLをコピーしました' : 'コピーできない場合はURLを長押ししてください';
+      return;
+    }
+    if (deferredInstallPrompt) {
+      const prompt = deferredInstallPrompt;
       deferredInstallPrompt = null;
-      installButton.classList.add('hide');
-      installButton.disabled = false;
+      try {
+        const response = await prompt.prompt();
+        const choice = response && response.outcome ? response : await prompt.userChoice;
+        if (choice && choice.outcome === 'accepted') {
+          shortLine.textContent = 'ホーム画面に追加されたら、オリーブの輪のアイコンから開いてください。';
+        } else {
+          showInstructions();
+        }
+      } catch (error) {
+        console.warn('アプリ追加の案内を表示できませんでした',error);
+        showInstructions();
+      }
+    } else {
+      showInstructions();
     }
   });
-  window.addEventListener('appinstalled', () => {
-    installButton.classList.add('hide');
-    if (help) help.classList.add('hide');
+  document.getElementById('pwaInstallLater').addEventListener('click', () => {
+    isHiddenForThisVisit = true;
+    syncVisibility();
   });
+  document.getElementById('pwaInstallDone').addEventListener('click', () => {
+    stepsBox.classList.add('hide');
+  });
+  window.addEventListener('beforeinstallprompt', (event) => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    if (isAndroid && !isLineBrowser) primary.textContent = '📲 このスマホに追加する';
+    syncVisibility();
+  });
+  window.addEventListener('appinstalled', () => {
+    deferredInstallPrompt = null;
+    isHiddenForThisVisit = true;
+    syncVisibility();
+  });
+  if (standaloneQuery.addEventListener) standaloneQuery.addEventListener('change', syncVisibility);
+  if (fullScreenQuery.addEventListener) fullScreenQuery.addEventListener('change', syncVisibility);
+  syncVisibility();
 
   if (!('serviceWorker' in navigator) || location.protocol !== 'https:') return;
   let waitingWorker = null;
