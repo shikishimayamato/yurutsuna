@@ -1,5 +1,5 @@
-/* ゆるつな香川 v2.7 オリーブの輪 — PWAインストール補助とオフライン案内のみ */
-const STATIC_CACHE = 'yurutsuna-static-v2.7-olive3';
+/* ゆるつな香川 v2.8 オリーブの輪 — PWAインストール補助とオフライン案内のみ */
+const STATIC_CACHE = 'yurutsuna-static-v2.8-olive4';
 const OFFLINE_URL = new URL('./offline.html', self.registration.scope).href;
 const ASSETS = ['offline.html','manifest.json','icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png']
   .map(path => new URL('./' + path, self.registration.scope).href);
